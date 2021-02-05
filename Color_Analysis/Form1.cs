@@ -19,6 +19,7 @@ namespace Color_Analysis
         public Form1()
         {
             InitializeComponent();
+
         }
 
         private void btnSet_Click(object sender, EventArgs e)

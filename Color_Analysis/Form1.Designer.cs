@@ -33,56 +33,56 @@ namespace Color_Analysis
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbLaw = new System.Windows.Forms.ComboBox();
+            this.cbLightProd = new System.Windows.Forms.ComboBox();
+            this.cbLightCol = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.NumLens1T = new System.Windows.Forms.NumericUpDown();
+            this.cbLens1T = new System.Windows.Forms.ComboBox();
+            this.cbLens1Prod = new System.Windows.Forms.ComboBox();
+            this.cbLens1Col = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.comboBox9 = new System.Windows.Forms.ComboBox();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.NumLen2T = new System.Windows.Forms.NumericUpDown();
+            this.cbLens2Col = new System.Windows.Forms.ComboBox();
+            this.cbLens2T = new System.Windows.Forms.ComboBox();
+            this.cbLens2Prod = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.comboBox10 = new System.Windows.Forms.ComboBox();
-            this.comboBox11 = new System.Windows.Forms.ComboBox();
-            this.comboBox12 = new System.Windows.Forms.ComboBox();
+            this.NumLen3T = new System.Windows.Forms.NumericUpDown();
+            this.cbLen3Col = new System.Windows.Forms.ComboBox();
+            this.cbLen3Prod = new System.Windows.Forms.ComboBox();
+            this.cbLens3T = new System.Windows.Forms.ComboBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.btnCalc = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TrsResult = new System.Windows.Forms.TextBox();
+            this.CyResult = new System.Windows.Forms.TextBox();
+            this.CxResult = new System.Windows.Forms.TextBox();
             this.btnSet = new System.Windows.Forms.Button();
             this.btnAdmin = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumLens1T)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumLen2T)).BeginInit();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumLen3T)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,9 +91,9 @@ namespace Color_Analysis
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.comboBox3);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cbLaw);
+            this.groupBox1.Controls.Add(this.cbLightProd);
+            this.groupBox1.Controls.Add(this.cbLightCol);
             this.groupBox1.Location = new System.Drawing.Point(12, 40);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(498, 72);
@@ -128,29 +128,29 @@ namespace Color_Analysis
             this.label1.TabIndex = 3;
             this.label1.Text = "Color";
             // 
-            // comboBox3
+            // cbLaw
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(354, 44);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(138, 22);
-            this.comboBox3.TabIndex = 2;
+            this.cbLaw.FormattingEnabled = true;
+            this.cbLaw.Location = new System.Drawing.Point(354, 44);
+            this.cbLaw.Name = "cbLaw";
+            this.cbLaw.Size = new System.Drawing.Size(138, 22);
+            this.cbLaw.TabIndex = 2;
             // 
-            // comboBox2
+            // cbLightProd
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(133, 44);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(215, 22);
-            this.comboBox2.TabIndex = 1;
+            this.cbLightProd.FormattingEnabled = true;
+            this.cbLightProd.Location = new System.Drawing.Point(133, 44);
+            this.cbLightProd.Name = "cbLightProd";
+            this.cbLightProd.Size = new System.Drawing.Size(215, 22);
+            this.cbLightProd.TabIndex = 1;
             // 
-            // comboBox1
+            // cbLightCol
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 44);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 22);
-            this.comboBox1.TabIndex = 0;
+            this.cbLightCol.FormattingEnabled = true;
+            this.cbLightCol.Location = new System.Drawing.Point(6, 44);
+            this.cbLightCol.Name = "cbLightCol";
+            this.cbLightCol.Size = new System.Drawing.Size(121, 22);
+            this.cbLightCol.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -158,10 +158,10 @@ namespace Color_Analysis
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.numericUpDown1);
-            this.groupBox2.Controls.Add(this.comboBox6);
-            this.groupBox2.Controls.Add(this.comboBox5);
-            this.groupBox2.Controls.Add(this.comboBox4);
+            this.groupBox2.Controls.Add(this.NumLens1T);
+            this.groupBox2.Controls.Add(this.cbLens1T);
+            this.groupBox2.Controls.Add(this.cbLens1Prod);
+            this.groupBox2.Controls.Add(this.cbLens1Col);
             this.groupBox2.Location = new System.Drawing.Point(12, 118);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(498, 72);
@@ -205,36 +205,36 @@ namespace Color_Analysis
             this.label4.TabIndex = 6;
             this.label4.Text = "Color";
             // 
-            // numericUpDown1
+            // NumLens1T
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(426, 44);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(66, 24);
-            this.numericUpDown1.TabIndex = 4;
+            this.NumLens1T.Location = new System.Drawing.Point(426, 44);
+            this.NumLens1T.Name = "NumLens1T";
+            this.NumLens1T.Size = new System.Drawing.Size(66, 24);
+            this.NumLens1T.TabIndex = 4;
             // 
-            // comboBox6
+            // cbLens1T
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(354, 44);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(65, 22);
-            this.comboBox6.TabIndex = 2;
+            this.cbLens1T.FormattingEnabled = true;
+            this.cbLens1T.Location = new System.Drawing.Point(354, 44);
+            this.cbLens1T.Name = "cbLens1T";
+            this.cbLens1T.Size = new System.Drawing.Size(65, 22);
+            this.cbLens1T.TabIndex = 2;
             // 
-            // comboBox5
+            // cbLens1Prod
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(133, 44);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(215, 22);
-            this.comboBox5.TabIndex = 3;
+            this.cbLens1Prod.FormattingEnabled = true;
+            this.cbLens1Prod.Location = new System.Drawing.Point(133, 44);
+            this.cbLens1Prod.Name = "cbLens1Prod";
+            this.cbLens1Prod.Size = new System.Drawing.Size(215, 22);
+            this.cbLens1Prod.TabIndex = 3;
             // 
-            // comboBox4
+            // cbLens1Col
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(6, 44);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 22);
-            this.comboBox4.TabIndex = 3;
+            this.cbLens1Col.FormattingEnabled = true;
+            this.cbLens1Col.Location = new System.Drawing.Point(6, 44);
+            this.cbLens1Col.Name = "cbLens1Col";
+            this.cbLens1Col.Size = new System.Drawing.Size(121, 22);
+            this.cbLens1Col.TabIndex = 3;
             // 
             // groupBox3
             // 
@@ -242,10 +242,10 @@ namespace Color_Analysis
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.numericUpDown2);
-            this.groupBox3.Controls.Add(this.comboBox7);
-            this.groupBox3.Controls.Add(this.comboBox9);
-            this.groupBox3.Controls.Add(this.comboBox8);
+            this.groupBox3.Controls.Add(this.NumLen2T);
+            this.groupBox3.Controls.Add(this.cbLens2Col);
+            this.groupBox3.Controls.Add(this.cbLens2T);
+            this.groupBox3.Controls.Add(this.cbLens2Prod);
             this.groupBox3.Location = new System.Drawing.Point(12, 196);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(498, 72);
@@ -289,36 +289,36 @@ namespace Color_Analysis
             this.label8.TabIndex = 10;
             this.label8.Text = "Color";
             // 
-            // numericUpDown2
+            // NumLen2T
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(425, 42);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(66, 24);
-            this.numericUpDown2.TabIndex = 4;
+            this.NumLen2T.Location = new System.Drawing.Point(425, 42);
+            this.NumLen2T.Name = "NumLen2T";
+            this.NumLen2T.Size = new System.Drawing.Size(66, 24);
+            this.NumLen2T.TabIndex = 4;
             // 
-            // comboBox7
+            // cbLens2Col
             // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(6, 44);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(121, 22);
-            this.comboBox7.TabIndex = 3;
+            this.cbLens2Col.FormattingEnabled = true;
+            this.cbLens2Col.Location = new System.Drawing.Point(6, 44);
+            this.cbLens2Col.Name = "cbLens2Col";
+            this.cbLens2Col.Size = new System.Drawing.Size(121, 22);
+            this.cbLens2Col.TabIndex = 3;
             // 
-            // comboBox9
+            // cbLens2T
             // 
-            this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Location = new System.Drawing.Point(354, 44);
-            this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(65, 22);
-            this.comboBox9.TabIndex = 2;
+            this.cbLens2T.FormattingEnabled = true;
+            this.cbLens2T.Location = new System.Drawing.Point(354, 44);
+            this.cbLens2T.Name = "cbLens2T";
+            this.cbLens2T.Size = new System.Drawing.Size(65, 22);
+            this.cbLens2T.TabIndex = 2;
             // 
-            // comboBox8
+            // cbLens2Prod
             // 
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(133, 44);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(215, 22);
-            this.comboBox8.TabIndex = 3;
+            this.cbLens2Prod.FormattingEnabled = true;
+            this.cbLens2Prod.Location = new System.Drawing.Point(133, 44);
+            this.cbLens2Prod.Name = "cbLens2Prod";
+            this.cbLens2Prod.Size = new System.Drawing.Size(215, 22);
+            this.cbLens2Prod.TabIndex = 3;
             // 
             // groupBox4
             // 
@@ -326,10 +326,10 @@ namespace Color_Analysis
             this.groupBox4.Controls.Add(this.label14);
             this.groupBox4.Controls.Add(this.label13);
             this.groupBox4.Controls.Add(this.label12);
-            this.groupBox4.Controls.Add(this.numericUpDown3);
-            this.groupBox4.Controls.Add(this.comboBox10);
-            this.groupBox4.Controls.Add(this.comboBox11);
-            this.groupBox4.Controls.Add(this.comboBox12);
+            this.groupBox4.Controls.Add(this.NumLen3T);
+            this.groupBox4.Controls.Add(this.cbLen3Col);
+            this.groupBox4.Controls.Add(this.cbLen3Prod);
+            this.groupBox4.Controls.Add(this.cbLens3T);
             this.groupBox4.Location = new System.Drawing.Point(12, 274);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(498, 72);
@@ -373,36 +373,36 @@ namespace Color_Analysis
             this.label12.TabIndex = 14;
             this.label12.Text = "Color";
             // 
-            // numericUpDown3
+            // NumLen3T
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(425, 42);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(66, 24);
-            this.numericUpDown3.TabIndex = 4;
+            this.NumLen3T.Location = new System.Drawing.Point(425, 42);
+            this.NumLen3T.Name = "NumLen3T";
+            this.NumLen3T.Size = new System.Drawing.Size(66, 24);
+            this.NumLen3T.TabIndex = 4;
             // 
-            // comboBox10
+            // cbLen3Col
             // 
-            this.comboBox10.FormattingEnabled = true;
-            this.comboBox10.Location = new System.Drawing.Point(6, 44);
-            this.comboBox10.Name = "comboBox10";
-            this.comboBox10.Size = new System.Drawing.Size(121, 22);
-            this.comboBox10.TabIndex = 3;
+            this.cbLen3Col.FormattingEnabled = true;
+            this.cbLen3Col.Location = new System.Drawing.Point(6, 44);
+            this.cbLen3Col.Name = "cbLen3Col";
+            this.cbLen3Col.Size = new System.Drawing.Size(121, 22);
+            this.cbLen3Col.TabIndex = 3;
             // 
-            // comboBox11
+            // cbLen3Prod
             // 
-            this.comboBox11.FormattingEnabled = true;
-            this.comboBox11.Location = new System.Drawing.Point(133, 44);
-            this.comboBox11.Name = "comboBox11";
-            this.comboBox11.Size = new System.Drawing.Size(215, 22);
-            this.comboBox11.TabIndex = 3;
+            this.cbLen3Prod.FormattingEnabled = true;
+            this.cbLen3Prod.Location = new System.Drawing.Point(133, 44);
+            this.cbLen3Prod.Name = "cbLen3Prod";
+            this.cbLen3Prod.Size = new System.Drawing.Size(215, 22);
+            this.cbLen3Prod.TabIndex = 3;
             // 
-            // comboBox12
+            // cbLens3T
             // 
-            this.comboBox12.FormattingEnabled = true;
-            this.comboBox12.Location = new System.Drawing.Point(354, 44);
-            this.comboBox12.Name = "comboBox12";
-            this.comboBox12.Size = new System.Drawing.Size(65, 22);
-            this.comboBox12.TabIndex = 2;
+            this.cbLens3T.FormattingEnabled = true;
+            this.cbLens3T.Location = new System.Drawing.Point(354, 44);
+            this.cbLens3T.Name = "cbLens3T";
+            this.cbLens3T.Size = new System.Drawing.Size(65, 22);
+            this.cbLens3T.TabIndex = 2;
             // 
             // groupBox5
             // 
@@ -411,9 +411,9 @@ namespace Color_Analysis
             this.groupBox5.Controls.Add(this.label17);
             this.groupBox5.Controls.Add(this.label16);
             this.groupBox5.Controls.Add(this.btnCalc);
-            this.groupBox5.Controls.Add(this.textBox3);
-            this.groupBox5.Controls.Add(this.textBox2);
-            this.groupBox5.Controls.Add(this.textBox1);
+            this.groupBox5.Controls.Add(this.TrsResult);
+            this.groupBox5.Controls.Add(this.CyResult);
+            this.groupBox5.Controls.Add(this.CxResult);
             this.groupBox5.Location = new System.Drawing.Point(12, 352);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(498, 73);
@@ -467,32 +467,32 @@ namespace Color_Analysis
             this.btnCalc.Text = "Calculate";
             this.btnCalc.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // TrsResult
             // 
-            this.textBox3.BackColor = System.Drawing.Color.Cornsilk;
-            this.textBox3.Location = new System.Drawing.Point(259, 43);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(120, 24);
-            this.textBox3.TabIndex = 2;
+            this.TrsResult.BackColor = System.Drawing.Color.Cornsilk;
+            this.TrsResult.Location = new System.Drawing.Point(259, 43);
+            this.TrsResult.Name = "TrsResult";
+            this.TrsResult.ReadOnly = true;
+            this.TrsResult.Size = new System.Drawing.Size(120, 24);
+            this.TrsResult.TabIndex = 2;
             // 
-            // textBox2
+            // CyResult
             // 
-            this.textBox2.BackColor = System.Drawing.Color.Cornsilk;
-            this.textBox2.Location = new System.Drawing.Point(133, 43);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(120, 24);
-            this.textBox2.TabIndex = 1;
+            this.CyResult.BackColor = System.Drawing.Color.Cornsilk;
+            this.CyResult.Location = new System.Drawing.Point(133, 43);
+            this.CyResult.Name = "CyResult";
+            this.CyResult.ReadOnly = true;
+            this.CyResult.Size = new System.Drawing.Size(120, 24);
+            this.CyResult.TabIndex = 1;
             // 
-            // textBox1
+            // CxResult
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Cornsilk;
-            this.textBox1.Location = new System.Drawing.Point(7, 43);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(120, 24);
-            this.textBox1.TabIndex = 0;
+            this.CxResult.BackColor = System.Drawing.Color.Cornsilk;
+            this.CxResult.Location = new System.Drawing.Point(7, 43);
+            this.CxResult.Name = "CxResult";
+            this.CxResult.ReadOnly = true;
+            this.CxResult.Size = new System.Drawing.Size(120, 24);
+            this.CxResult.TabIndex = 0;
             // 
             // btnSet
             // 
@@ -551,13 +551,13 @@ namespace Color_Analysis
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumLens1T)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumLen2T)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumLen3T)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
@@ -572,25 +572,25 @@ namespace Color_Analysis
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.ComboBox comboBox9;
-        private System.Windows.Forms.ComboBox comboBox8;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.ComboBox comboBox10;
-        private System.Windows.Forms.ComboBox comboBox11;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.ComboBox comboBox12;
+        private System.Windows.Forms.ComboBox cbLaw;
+        private System.Windows.Forms.ComboBox cbLightProd;
+        private System.Windows.Forms.ComboBox cbLightCol;
+        private System.Windows.Forms.ComboBox cbLens1Prod;
+        private System.Windows.Forms.ComboBox cbLens1Col;
+        private System.Windows.Forms.NumericUpDown NumLens1T;
+        private System.Windows.Forms.ComboBox cbLens1T;
+        private System.Windows.Forms.ComboBox cbLens2Col;
+        private System.Windows.Forms.ComboBox cbLens2T;
+        private System.Windows.Forms.ComboBox cbLens2Prod;
+        private System.Windows.Forms.NumericUpDown NumLen2T;
+        private System.Windows.Forms.ComboBox cbLen3Col;
+        private System.Windows.Forms.ComboBox cbLen3Prod;
+        private System.Windows.Forms.NumericUpDown NumLen3T;
+        private System.Windows.Forms.ComboBox cbLens3T;
         private System.Windows.Forms.Button btnCalc;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TrsResult;
+        private System.Windows.Forms.TextBox CyResult;
+        private System.Windows.Forms.TextBox CxResult;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

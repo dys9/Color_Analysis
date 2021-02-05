@@ -29,14 +29,14 @@ namespace Color_Analysis
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbLightSource = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbLaw = new System.Windows.Forms.ComboBox();
             this.cbLightProd = new System.Windows.Forms.ComboBox();
             this.cbLightCol = new System.Windows.Forms.ComboBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gbLens1 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -45,25 +45,27 @@ namespace Color_Analysis
             this.cbLens1T = new System.Windows.Forms.ComboBox();
             this.cbLens1Prod = new System.Windows.Forms.ComboBox();
             this.cbLens1Col = new System.Windows.Forms.ComboBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.gbLens2 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.NumLen2T = new System.Windows.Forms.NumericUpDown();
+            this.NumLens2T = new System.Windows.Forms.NumericUpDown();
             this.cbLens2Col = new System.Windows.Forms.ComboBox();
             this.cbLens2T = new System.Windows.Forms.ComboBox();
             this.cbLens2Prod = new System.Windows.Forms.ComboBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.ckLens2 = new System.Windows.Forms.CheckBox();
+            this.gbLens3 = new System.Windows.Forms.GroupBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.NumLen3T = new System.Windows.Forms.NumericUpDown();
-            this.cbLen3Col = new System.Windows.Forms.ComboBox();
-            this.cbLen3Prod = new System.Windows.Forms.ComboBox();
+            this.NumLens3T = new System.Windows.Forms.NumericUpDown();
+            this.cbLens3Col = new System.Windows.Forms.ComboBox();
+            this.cbLens3Prod = new System.Windows.Forms.ComboBox();
             this.cbLens3T = new System.Windows.Forms.ComboBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.ckLens3 = new System.Windows.Forms.CheckBox();
+            this.gbResult = new System.Windows.Forms.GroupBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -76,30 +78,30 @@ namespace Color_Analysis
             this.btnAdmin = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.gbLightSource.SuspendLayout();
+            this.gbLens1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NumLens1T)).BeginInit();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NumLen2T)).BeginInit();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NumLen3T)).BeginInit();
-            this.groupBox5.SuspendLayout();
+            this.gbLens2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NumLens2T)).BeginInit();
+            this.gbLens3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NumLens3T)).BeginInit();
+            this.gbResult.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gbLightSource
             // 
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.cbLaw);
-            this.groupBox1.Controls.Add(this.cbLightProd);
-            this.groupBox1.Controls.Add(this.cbLightCol);
-            this.groupBox1.Location = new System.Drawing.Point(12, 40);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(498, 72);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Light Source";
+            this.gbLightSource.Controls.Add(this.label3);
+            this.gbLightSource.Controls.Add(this.label2);
+            this.gbLightSource.Controls.Add(this.label1);
+            this.gbLightSource.Controls.Add(this.cbLaw);
+            this.gbLightSource.Controls.Add(this.cbLightProd);
+            this.gbLightSource.Controls.Add(this.cbLightCol);
+            this.gbLightSource.Location = new System.Drawing.Point(12, 40);
+            this.gbLightSource.Name = "gbLightSource";
+            this.gbLightSource.Size = new System.Drawing.Size(498, 72);
+            this.gbLightSource.TabIndex = 0;
+            this.gbLightSource.TabStop = false;
+            this.gbLightSource.Text = "Light Source";
             // 
             // label3
             // 
@@ -135,6 +137,7 @@ namespace Color_Analysis
             this.cbLaw.Name = "cbLaw";
             this.cbLaw.Size = new System.Drawing.Size(138, 22);
             this.cbLaw.TabIndex = 2;
+            this.cbLaw.SelectedIndexChanged += new System.EventHandler(this.cbLaw_Change);
             // 
             // cbLightProd
             // 
@@ -152,27 +155,27 @@ namespace Color_Analysis
             this.cbLightCol.Size = new System.Drawing.Size(121, 22);
             this.cbLightCol.TabIndex = 0;
             // 
-            // groupBox2
+            // gbLens1
             // 
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.NumLens1T);
-            this.groupBox2.Controls.Add(this.cbLens1T);
-            this.groupBox2.Controls.Add(this.cbLens1Prod);
-            this.groupBox2.Controls.Add(this.cbLens1Col);
-            this.groupBox2.Location = new System.Drawing.Point(12, 118);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(498, 72);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Lens1";
+            this.gbLens1.Controls.Add(this.label7);
+            this.gbLens1.Controls.Add(this.label6);
+            this.gbLens1.Controls.Add(this.label5);
+            this.gbLens1.Controls.Add(this.label4);
+            this.gbLens1.Controls.Add(this.NumLens1T);
+            this.gbLens1.Controls.Add(this.cbLens1T);
+            this.gbLens1.Controls.Add(this.cbLens1Prod);
+            this.gbLens1.Controls.Add(this.cbLens1Col);
+            this.gbLens1.Location = new System.Drawing.Point(12, 118);
+            this.gbLens1.Name = "gbLens1";
+            this.gbLens1.Size = new System.Drawing.Size(498, 72);
+            this.gbLens1.TabIndex = 1;
+            this.gbLens1.TabStop = false;
+            this.gbLens1.Text = "Lens1";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(422, 26);
+            this.label7.Location = new System.Drawing.Point(423, 25);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 15);
             this.label7.TabIndex = 9;
@@ -181,7 +184,7 @@ namespace Color_Analysis
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(351, 26);
+            this.label6.Location = new System.Drawing.Point(350, 25);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 15);
             this.label6.TabIndex = 8;
@@ -190,7 +193,7 @@ namespace Color_Analysis
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(130, 26);
+            this.label5.Location = new System.Drawing.Point(152, 25);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 15);
             this.label5.TabIndex = 7;
@@ -199,7 +202,7 @@ namespace Color_Analysis
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 26);
+            this.label4.Location = new System.Drawing.Point(6, 25);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 15);
             this.label4.TabIndex = 6;
@@ -207,6 +210,7 @@ namespace Color_Analysis
             // 
             // NumLens1T
             // 
+            this.NumLens1T.Enabled = false;
             this.NumLens1T.Location = new System.Drawing.Point(426, 44);
             this.NumLens1T.Name = "NumLens1T";
             this.NumLens1T.Size = new System.Drawing.Size(66, 24);
@@ -219,44 +223,46 @@ namespace Color_Analysis
             this.cbLens1T.Name = "cbLens1T";
             this.cbLens1T.Size = new System.Drawing.Size(65, 22);
             this.cbLens1T.TabIndex = 2;
+            this.cbLens1T.SelectedIndexChanged += new System.EventHandler(this.NumLens1T_Change);
             // 
             // cbLens1Prod
             // 
             this.cbLens1Prod.FormattingEnabled = true;
-            this.cbLens1Prod.Location = new System.Drawing.Point(133, 44);
+            this.cbLens1Prod.Location = new System.Drawing.Point(155, 44);
             this.cbLens1Prod.Name = "cbLens1Prod";
-            this.cbLens1Prod.Size = new System.Drawing.Size(215, 22);
+            this.cbLens1Prod.Size = new System.Drawing.Size(193, 22);
             this.cbLens1Prod.TabIndex = 3;
             // 
             // cbLens1Col
             // 
             this.cbLens1Col.FormattingEnabled = true;
-            this.cbLens1Col.Location = new System.Drawing.Point(6, 44);
+            this.cbLens1Col.Location = new System.Drawing.Point(7, 43);
             this.cbLens1Col.Name = "cbLens1Col";
-            this.cbLens1Col.Size = new System.Drawing.Size(121, 22);
+            this.cbLens1Col.Size = new System.Drawing.Size(142, 22);
             this.cbLens1Col.TabIndex = 3;
             // 
-            // groupBox3
+            // gbLens2
             // 
-            this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.NumLen2T);
-            this.groupBox3.Controls.Add(this.cbLens2Col);
-            this.groupBox3.Controls.Add(this.cbLens2T);
-            this.groupBox3.Controls.Add(this.cbLens2Prod);
-            this.groupBox3.Location = new System.Drawing.Point(12, 196);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(498, 72);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Lens2";
+            this.gbLens2.Controls.Add(this.label11);
+            this.gbLens2.Controls.Add(this.label10);
+            this.gbLens2.Controls.Add(this.label9);
+            this.gbLens2.Controls.Add(this.label8);
+            this.gbLens2.Controls.Add(this.NumLens2T);
+            this.gbLens2.Controls.Add(this.cbLens2Col);
+            this.gbLens2.Controls.Add(this.cbLens2T);
+            this.gbLens2.Controls.Add(this.cbLens2Prod);
+            this.gbLens2.Enabled = false;
+            this.gbLens2.Location = new System.Drawing.Point(33, 196);
+            this.gbLens2.Name = "gbLens2";
+            this.gbLens2.Size = new System.Drawing.Size(477, 72);
+            this.gbLens2.TabIndex = 2;
+            this.gbLens2.TabStop = false;
+            this.gbLens2.Text = "Lens2";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(422, 26);
+            this.label11.Location = new System.Drawing.Point(401, 27);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(49, 15);
             this.label11.TabIndex = 13;
@@ -265,7 +271,7 @@ namespace Color_Analysis
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(351, 26);
+            this.label10.Location = new System.Drawing.Point(330, 26);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(49, 15);
             this.label10.TabIndex = 12;
@@ -274,7 +280,7 @@ namespace Color_Analysis
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(130, 26);
+            this.label9.Location = new System.Drawing.Point(131, 26);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(58, 15);
             this.label9.TabIndex = 11;
@@ -283,64 +289,77 @@ namespace Color_Analysis
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 26);
+            this.label8.Location = new System.Drawing.Point(6, 26);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(42, 15);
             this.label8.TabIndex = 10;
             this.label8.Text = "Color";
             // 
-            // NumLen2T
+            // NumLens2T
             // 
-            this.NumLen2T.Location = new System.Drawing.Point(425, 42);
-            this.NumLen2T.Name = "NumLen2T";
-            this.NumLen2T.Size = new System.Drawing.Size(66, 24);
-            this.NumLen2T.TabIndex = 4;
+            this.NumLens2T.Enabled = false;
+            this.NumLens2T.Location = new System.Drawing.Point(404, 42);
+            this.NumLens2T.Name = "NumLens2T";
+            this.NumLens2T.Size = new System.Drawing.Size(66, 24);
+            this.NumLens2T.TabIndex = 4;
             // 
             // cbLens2Col
             // 
             this.cbLens2Col.FormattingEnabled = true;
-            this.cbLens2Col.Location = new System.Drawing.Point(6, 44);
+            this.cbLens2Col.Location = new System.Drawing.Point(9, 44);
             this.cbLens2Col.Name = "cbLens2Col";
-            this.cbLens2Col.Size = new System.Drawing.Size(121, 22);
+            this.cbLens2Col.Size = new System.Drawing.Size(119, 22);
             this.cbLens2Col.TabIndex = 3;
             // 
             // cbLens2T
             // 
             this.cbLens2T.FormattingEnabled = true;
-            this.cbLens2T.Location = new System.Drawing.Point(354, 44);
+            this.cbLens2T.Location = new System.Drawing.Point(333, 44);
             this.cbLens2T.Name = "cbLens2T";
-            this.cbLens2T.Size = new System.Drawing.Size(65, 22);
+            this.cbLens2T.Size = new System.Drawing.Size(66, 22);
             this.cbLens2T.TabIndex = 2;
+            this.cbLens2T.SelectedIndexChanged += new System.EventHandler(this.NumLens2T_Change);
             // 
             // cbLens2Prod
             // 
             this.cbLens2Prod.FormattingEnabled = true;
-            this.cbLens2Prod.Location = new System.Drawing.Point(133, 44);
+            this.cbLens2Prod.Location = new System.Drawing.Point(134, 44);
             this.cbLens2Prod.Name = "cbLens2Prod";
-            this.cbLens2Prod.Size = new System.Drawing.Size(215, 22);
+            this.cbLens2Prod.Size = new System.Drawing.Size(193, 22);
             this.cbLens2Prod.TabIndex = 3;
             // 
-            // groupBox4
+            // ckLens2
             // 
-            this.groupBox4.Controls.Add(this.label15);
-            this.groupBox4.Controls.Add(this.label14);
-            this.groupBox4.Controls.Add(this.label13);
-            this.groupBox4.Controls.Add(this.label12);
-            this.groupBox4.Controls.Add(this.NumLen3T);
-            this.groupBox4.Controls.Add(this.cbLen3Col);
-            this.groupBox4.Controls.Add(this.cbLen3Prod);
-            this.groupBox4.Controls.Add(this.cbLens3T);
-            this.groupBox4.Location = new System.Drawing.Point(12, 274);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(498, 72);
-            this.groupBox4.TabIndex = 3;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Len3";
+            this.ckLens2.AutoSize = true;
+            this.ckLens2.Location = new System.Drawing.Point(12, 224);
+            this.ckLens2.Name = "ckLens2";
+            this.ckLens2.Size = new System.Drawing.Size(15, 14);
+            this.ckLens2.TabIndex = 10;
+            this.ckLens2.UseVisualStyleBackColor = true;
+            this.ckLens2.CheckedChanged += new System.EventHandler(this.ckLens2_Change);
+            // 
+            // gbLens3
+            // 
+            this.gbLens3.Controls.Add(this.label15);
+            this.gbLens3.Controls.Add(this.label14);
+            this.gbLens3.Controls.Add(this.label13);
+            this.gbLens3.Controls.Add(this.label12);
+            this.gbLens3.Controls.Add(this.NumLens3T);
+            this.gbLens3.Controls.Add(this.cbLens3Col);
+            this.gbLens3.Controls.Add(this.cbLens3Prod);
+            this.gbLens3.Controls.Add(this.cbLens3T);
+            this.gbLens3.Enabled = false;
+            this.gbLens3.Location = new System.Drawing.Point(33, 274);
+            this.gbLens3.Name = "gbLens3";
+            this.gbLens3.Size = new System.Drawing.Size(477, 72);
+            this.gbLens3.TabIndex = 3;
+            this.gbLens3.TabStop = false;
+            this.gbLens3.Text = "Lens3";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(422, 26);
+            this.label15.Location = new System.Drawing.Point(402, 24);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(49, 15);
             this.label15.TabIndex = 17;
@@ -349,7 +368,7 @@ namespace Color_Analysis
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(351, 26);
+            this.label14.Location = new System.Drawing.Point(329, 26);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(49, 15);
             this.label14.TabIndex = 16;
@@ -358,7 +377,7 @@ namespace Color_Analysis
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(130, 26);
+            this.label13.Location = new System.Drawing.Point(131, 24);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(58, 15);
             this.label13.TabIndex = 15;
@@ -373,53 +392,65 @@ namespace Color_Analysis
             this.label12.TabIndex = 14;
             this.label12.Text = "Color";
             // 
-            // NumLen3T
+            // NumLens3T
             // 
-            this.NumLen3T.Location = new System.Drawing.Point(425, 42);
-            this.NumLen3T.Name = "NumLen3T";
-            this.NumLen3T.Size = new System.Drawing.Size(66, 24);
-            this.NumLen3T.TabIndex = 4;
+            this.NumLens3T.Enabled = false;
+            this.NumLens3T.Location = new System.Drawing.Point(405, 42);
+            this.NumLens3T.Name = "NumLens3T";
+            this.NumLens3T.Size = new System.Drawing.Size(66, 24);
+            this.NumLens3T.TabIndex = 4;
             // 
-            // cbLen3Col
+            // cbLens3Col
             // 
-            this.cbLen3Col.FormattingEnabled = true;
-            this.cbLen3Col.Location = new System.Drawing.Point(6, 44);
-            this.cbLen3Col.Name = "cbLen3Col";
-            this.cbLen3Col.Size = new System.Drawing.Size(121, 22);
-            this.cbLen3Col.TabIndex = 3;
+            this.cbLens3Col.FormattingEnabled = true;
+            this.cbLens3Col.Location = new System.Drawing.Point(6, 44);
+            this.cbLens3Col.Name = "cbLens3Col";
+            this.cbLens3Col.Size = new System.Drawing.Size(122, 22);
+            this.cbLens3Col.TabIndex = 3;
             // 
-            // cbLen3Prod
+            // cbLens3Prod
             // 
-            this.cbLen3Prod.FormattingEnabled = true;
-            this.cbLen3Prod.Location = new System.Drawing.Point(133, 44);
-            this.cbLen3Prod.Name = "cbLen3Prod";
-            this.cbLen3Prod.Size = new System.Drawing.Size(215, 22);
-            this.cbLen3Prod.TabIndex = 3;
+            this.cbLens3Prod.FormattingEnabled = true;
+            this.cbLens3Prod.Location = new System.Drawing.Point(134, 44);
+            this.cbLens3Prod.Name = "cbLens3Prod";
+            this.cbLens3Prod.Size = new System.Drawing.Size(193, 22);
+            this.cbLens3Prod.TabIndex = 3;
             // 
             // cbLens3T
             // 
             this.cbLens3T.FormattingEnabled = true;
-            this.cbLens3T.Location = new System.Drawing.Point(354, 44);
+            this.cbLens3T.Location = new System.Drawing.Point(332, 44);
             this.cbLens3T.Name = "cbLens3T";
-            this.cbLens3T.Size = new System.Drawing.Size(65, 22);
+            this.cbLens3T.Size = new System.Drawing.Size(66, 22);
             this.cbLens3T.TabIndex = 2;
+            this.cbLens3T.SelectedIndexChanged += new System.EventHandler(this.NumLens3T_Change);
             // 
-            // groupBox5
+            // ckLens3
             // 
-            this.groupBox5.Controls.Add(this.label19);
-            this.groupBox5.Controls.Add(this.label18);
-            this.groupBox5.Controls.Add(this.label17);
-            this.groupBox5.Controls.Add(this.label16);
-            this.groupBox5.Controls.Add(this.btnCalc);
-            this.groupBox5.Controls.Add(this.TrsResult);
-            this.groupBox5.Controls.Add(this.CyResult);
-            this.groupBox5.Controls.Add(this.CxResult);
-            this.groupBox5.Location = new System.Drawing.Point(12, 352);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(498, 73);
-            this.groupBox5.TabIndex = 4;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Result";
+            this.ckLens3.AutoSize = true;
+            this.ckLens3.Location = new System.Drawing.Point(12, 301);
+            this.ckLens3.Name = "ckLens3";
+            this.ckLens3.Size = new System.Drawing.Size(15, 14);
+            this.ckLens3.TabIndex = 10;
+            this.ckLens3.UseVisualStyleBackColor = true;
+            this.ckLens3.CheckedChanged += new System.EventHandler(this.ckLens3_Change);
+            // 
+            // gbResult
+            // 
+            this.gbResult.Controls.Add(this.label19);
+            this.gbResult.Controls.Add(this.label18);
+            this.gbResult.Controls.Add(this.label17);
+            this.gbResult.Controls.Add(this.label16);
+            this.gbResult.Controls.Add(this.btnCalc);
+            this.gbResult.Controls.Add(this.TrsResult);
+            this.gbResult.Controls.Add(this.CyResult);
+            this.gbResult.Controls.Add(this.CxResult);
+            this.gbResult.Location = new System.Drawing.Point(12, 352);
+            this.gbResult.Name = "gbResult";
+            this.gbResult.Size = new System.Drawing.Size(498, 73);
+            this.gbResult.TabIndex = 4;
+            this.gbResult.TabStop = false;
+            this.gbResult.Text = "Result";
             // 
             // label19
             // 
@@ -536,30 +567,32 @@ namespace Color_Analysis
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(522, 603);
+            this.Controls.Add(this.ckLens3);
+            this.Controls.Add(this.ckLens2);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.btnSet);
-            this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbResult);
+            this.Controls.Add(this.gbLens3);
+            this.Controls.Add(this.gbLens2);
+            this.Controls.Add(this.gbLens1);
+            this.Controls.Add(this.gbLightSource);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.gbLightSource.ResumeLayout(false);
+            this.gbLightSource.PerformLayout();
+            this.gbLens1.ResumeLayout(false);
+            this.gbLens1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NumLens1T)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NumLen2T)).EndInit();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NumLen3T)).EndInit();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
+            this.gbLens2.ResumeLayout(false);
+            this.gbLens2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NumLens2T)).EndInit();
+            this.gbLens3.ResumeLayout(false);
+            this.gbLens3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NumLens3T)).EndInit();
+            this.gbResult.ResumeLayout(false);
+            this.gbResult.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -567,11 +600,11 @@ namespace Color_Analysis
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox gbLightSource;
+        private System.Windows.Forms.GroupBox gbLens1;
+        private System.Windows.Forms.GroupBox gbLens2;
+        private System.Windows.Forms.GroupBox gbLens3;
+        private System.Windows.Forms.GroupBox gbResult;
         private System.Windows.Forms.ComboBox cbLaw;
         private System.Windows.Forms.ComboBox cbLightProd;
         private System.Windows.Forms.ComboBox cbLightCol;
@@ -582,10 +615,10 @@ namespace Color_Analysis
         private System.Windows.Forms.ComboBox cbLens2Col;
         private System.Windows.Forms.ComboBox cbLens2T;
         private System.Windows.Forms.ComboBox cbLens2Prod;
-        private System.Windows.Forms.NumericUpDown NumLen2T;
-        private System.Windows.Forms.ComboBox cbLen3Col;
-        private System.Windows.Forms.ComboBox cbLen3Prod;
-        private System.Windows.Forms.NumericUpDown NumLen3T;
+        private System.Windows.Forms.NumericUpDown NumLens2T;
+        private System.Windows.Forms.ComboBox cbLens3Col;
+        private System.Windows.Forms.ComboBox cbLens3Prod;
+        private System.Windows.Forms.NumericUpDown NumLens3T;
         private System.Windows.Forms.ComboBox cbLens3T;
         private System.Windows.Forms.Button btnCalc;
         private System.Windows.Forms.TextBox TrsResult;
@@ -614,6 +647,8 @@ namespace Color_Analysis
         private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.CheckBox ckLens2;
+        private System.Windows.Forms.CheckBox ckLens3;
     }
 }
 

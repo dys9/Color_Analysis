@@ -10,11 +10,11 @@ using System.Windows.Forms;
 using static System.Windows.Forms.ComboBox;
 // https://stackoverflow.com/questions/42107207/draw-cie-color-space-in-mschart // Draw Graph
 // https://link2me.tistory.com/857 // Communication for Forms
+// https://docs.microsoft.com/ko-kr/dotnet/api/system.drawing.rectangle.contains?view=net-5.0 // isinRect
 namespace Color_Analysis
 {
     public partial class mainForm : Form
     {
-
         private List<double> _LawX = new List<double>();
         public List<double> LawX
         {
@@ -40,6 +40,7 @@ namespace Color_Analysis
         public const string lawPath = @"D:\이대현\WORK_SPACE\Project_C#\Color_Analysis\Color_Analysis\Law";
         public const string lensPath = @"D:\이대현\WORK_SPACE\Project_C#\Color_Analysis\Color_Analysis\Lens";
         public const string lightPath = @"D:\이대현\WORK_SPACE\Project_C#\Color_Analysis\Color_Analysis\Light";
+
 
         public mainForm()
         {
@@ -117,6 +118,8 @@ namespace Color_Analysis
 
         private void cbLaw_Change(object sender, EventArgs e)
         {
+            LawX.Clear();
+            LawY.Clear();
             if (cbLaw.SelectedItem.ToString() != null)
             {
                 System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(lawPath); 

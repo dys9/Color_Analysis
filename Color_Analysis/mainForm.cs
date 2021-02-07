@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.ComboBox;
-// https://stackoverflow.com/questions/42107207/draw-cie-color-space-in-mschart
+// https://stackoverflow.com/questions/42107207/draw-cie-color-space-in-mschart // Draw Graph
+// https://link2me.tistory.com/857 // Communication for Forms
 namespace Color_Analysis
 {
-    public partial class Form1 : Form
+    public partial class mainForm : Form
     {
+
         private List<double> _LawX = new List<double>();
         public List<double> LawX
         {
@@ -39,7 +41,7 @@ namespace Color_Analysis
         public const string lensPath = @"D:\이대현\WORK_SPACE\Project_C#\Color_Analysis\Color_Analysis\Lens";
         public const string lightPath = @"D:\이대현\WORK_SPACE\Project_C#\Color_Analysis\Color_Analysis\Light";
 
-        public Form1()
+        public mainForm()
         {
             InitializeComponent();
 
@@ -63,10 +65,8 @@ namespace Color_Analysis
 
         private void btnSet_Click(object sender, EventArgs e)
         {
-            
-            setForm setform = new setForm();
-            setform.LawX = LawX;
-            setform.LawY = LawY;
+            setForm setform = new setForm(this);
+            setform.Owner = this;
             setform.ShowDialog();
         }
 

@@ -1,7 +1,7 @@
 ﻿
 namespace Color_Analysis
 {
-    partial class Form1
+    partial class mainForm
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -210,11 +210,32 @@ namespace Color_Analysis
             // 
             // NumLens1T
             // 
+            this.NumLens1T.DecimalPlaces = 1;
             this.NumLens1T.Enabled = false;
+            this.NumLens1T.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.NumLens1T.Location = new System.Drawing.Point(426, 44);
+            this.NumLens1T.Maximum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.NumLens1T.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.NumLens1T.Name = "NumLens1T";
             this.NumLens1T.Size = new System.Drawing.Size(66, 24);
             this.NumLens1T.TabIndex = 4;
+            this.NumLens1T.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // cbLens1T
             // 
@@ -297,11 +318,32 @@ namespace Color_Analysis
             // 
             // NumLens2T
             // 
+            this.NumLens2T.DecimalPlaces = 1;
             this.NumLens2T.Enabled = false;
+            this.NumLens2T.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.NumLens2T.Location = new System.Drawing.Point(404, 42);
+            this.NumLens2T.Maximum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.NumLens2T.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.NumLens2T.Name = "NumLens2T";
             this.NumLens2T.Size = new System.Drawing.Size(66, 24);
             this.NumLens2T.TabIndex = 4;
+            this.NumLens2T.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // cbLens2Col
             // 
@@ -394,11 +436,32 @@ namespace Color_Analysis
             // 
             // NumLens3T
             // 
+            this.NumLens3T.DecimalPlaces = 1;
             this.NumLens3T.Enabled = false;
+            this.NumLens3T.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.NumLens3T.Location = new System.Drawing.Point(405, 42);
+            this.NumLens3T.Maximum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.NumLens3T.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.NumLens3T.Name = "NumLens3T";
             this.NumLens3T.Size = new System.Drawing.Size(66, 24);
             this.NumLens3T.TabIndex = 4;
+            this.NumLens3T.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // cbLens3Col
             // 
@@ -562,7 +625,7 @@ namespace Color_Analysis
             this.textBox4.Size = new System.Drawing.Size(237, 24);
             this.textBox4.TabIndex = 22;
             // 
-            // Form1
+            // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -578,7 +641,8 @@ namespace Color_Analysis
             this.Controls.Add(this.gbLens2);
             this.Controls.Add(this.gbLens1);
             this.Controls.Add(this.gbLightSource);
-            this.Name = "Form1";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "mainForm";
             this.Text = "Form1";
             this.gbLightSource.ResumeLayout(false);
             this.gbLightSource.PerformLayout();

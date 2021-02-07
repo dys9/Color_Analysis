@@ -12,26 +12,34 @@ namespace Color_Analysis
 {
     public partial class setForm : Form
     {
-        private List<double> _LawX = new List<double>();
-        public List<double> LawX
-        {
-            get { return _LawX; }
-            set { _LawX = LawX; }
+        private mainForm _mainform;
+        public mainForm mainform {
+            get { return _mainform; }
+            set { _mainform = value; }
         }
 
-        private List<double> _LawY = new List<double>();
-        public List<double> LawY
-        {
-            get { return _LawY; }
-            set { _LawY = LawY; }
-        }
 
         public setForm()
         {
             InitializeComponent();
-            for (int i = 0; i < LawX.Count; i++)
+        }
+
+        public setForm(mainForm mainform)
+        {
+            InitializeComponent();
+            this.mainform = mainform;
+
+            for (int i = 0; i < mainform.LawX.Count; i++)
             {
-                textBox1.Text = $"({LawX[i]} , {LawY[i]})\r\n";
+                textBox1.Text += $"({mainform.LawX[i]}, {mainform.LawY[i]})\r\n";
+            }
+        }
+
+        private void setForm_Load(object sender, EventArgs e)
+        {
+            for (int i = 0; i < mainform.LawX.Count; i++)
+            {
+                textBox1.Text += $"({mainform.LawX[i]}, {mainform.LawY[i]})\r\n";
             }
         }
     }

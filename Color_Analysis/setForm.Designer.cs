@@ -50,7 +50,6 @@ namespace Color_Analysis
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "setForm";
             this.Text = "setForm";
-            this.Load += new System.EventHandler(this.setForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

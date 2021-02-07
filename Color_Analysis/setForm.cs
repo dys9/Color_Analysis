@@ -24,19 +24,11 @@ namespace Color_Analysis
             InitializeComponent();
         }
 
-        public setForm(mainForm mainform)
+        public setForm(mainForm mf)
         {
             InitializeComponent();
-            this.mainform = mainform;
+            this.mainform = mf;
 
-            for (int i = 0; i < mainform.LawX.Count; i++)
-            {
-                textBox1.Text += $"({mainform.LawX[i]}, {mainform.LawY[i]})\r\n";
-            }
-        }
-
-        private void setForm_Load(object sender, EventArgs e)
-        {
             for (int i = 0; i < mainform.LawX.Count; i++)
             {
                 textBox1.Text += $"({mainform.LawX[i]}, {mainform.LawY[i]})\r\n";

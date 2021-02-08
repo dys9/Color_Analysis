@@ -30,7 +30,7 @@ namespace Color_Analysis
             set { _LawY = LawY; }
         }
 
-        private PointF _PointResult = new PointF(3.3f, 3.3f);
+        private PointF _PointResult = new PointF(0.57f, 0.42f);
         public PointF PointResult
         {
             get { return _PointResult; }
@@ -179,15 +179,67 @@ namespace Color_Analysis
             });
             return point;
         }
+
         private void DrawGraph()
         {
-            chtResult.Series.Clear();
+            if (LawX.Count + LawY.Count > 0)
+            {
+                chtResult.Series.Clear();
+                chtResult.ChartAreas.Clear();
+                chtResult.ChartAreas.Add("Result");
 
-            var series = new Series("Finance");
+                double Xinterval = CustomCeil(LawX.Max() - LawX.Min());
+                double Yinterval = CustomCeil(LawY.Max() - LawY.Min());
 
-            // Frist parameter is X-Axis and Second is Collection of Y- Axis
-            series.Points.DataBindXY(new[] { 2001, 2002, 2003, 2004 }, new[] { 100, 200, 90, 150 });
-            chtResult.Series.Add(series);
+                chtResult.ChartAreas["Result"].AxisX.Interval = Xinterval;
+                chtResult.ChartAreas["Result"].AxisX.Minimum = (LawX.Min() - Xinterval);
+                chtResult.ChartAreas["Result"].AxisX.Maximum = (LawX.Max() + Xinterval);
+
+                chtResult.ChartAreas["Result"].AxisY.Interval = Yinterval;
+                chtResult.ChartAreas["Result"].AxisY.Minimum = (LawY.Min() - Yinterval);
+                chtResult.ChartAreas["Result"].AxisY.Maximum = (LawY.Max() + Yinterval);
+
+/*                chtResult.ChartAreas["Result"].AxisX.Minimum = 0.53;
+                chtResult.ChartAreas["Result"].AxisX.Maximum = 0.62;
+                chtResult.ChartAreas["Result"].AxisY.Minimum = 0.36;
+                chtResult.ChartAreas["Result"].AxisY.Maximum = 0.47;*/
+
+                Series Lines = chtResult.Series.Add("Lines"); //새로운 series 생성
+                chtResult.Series["Lines"].IsVisibleInLegend = false;
+                Lines.ChartType = SeriesChartType.Line;
+                
+                for (int i = 0; i < LawX.Count; i++)
+                {
+                    Lines.Points.AddXY(LawX[i], LawY[i]);
+                    if (i == LawX.Count - 1) Lines.Points.AddXY(LawX[0], LawY[0]);
+                }
+
+                Series pPoint = chtResult.Series.Add("Point");
+                chtResult.Series["Point"].ChartType = SeriesChartType.Point;
+                chtResult.Series["Point"].IsVisibleInLegend = false;
+                pPoint.Points.AddXY((double)PointResult.X, (double)PointResult.Y);
+
+            }
+        }
+
+        private double CustomCeil(double input)
+        {
+            if ( input > 1.0)
+            {
+                return (double)((int)input);
+            }
+
+            double d = input;
+            int cnt = 0;
+            while (d < 1.0)
+            {
+                cnt++;
+                d *= 10;
+            }
+
+            double result = Math.Ceiling(input * Math.Pow(10, cnt)) / Math.Pow(10, cnt);
+            MessageBox.Show(d.ToString() + ", " + result.ToString());
+            return result;
         }
 
         private void btnCalc_Click(object sender, EventArgs e)

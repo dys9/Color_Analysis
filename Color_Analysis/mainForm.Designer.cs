@@ -29,9 +29,9 @@ namespace Color_Analysis
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.gbLightSource = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -635,19 +635,17 @@ namespace Color_Analysis
             // 
             // chtResult
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chtResult.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chtResult.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chtResult.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chtResult.Legends.Add(legend1);
             this.chtResult.Location = new System.Drawing.Point(6, 23);
             this.chtResult.Name = "chtResult";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chtResult.Series.Add(series2);
             this.chtResult.Size = new System.Drawing.Size(463, 346);
             this.chtResult.TabIndex = 23;
             this.chtResult.Text = "chart1";
+            title1.Name = "Result";
+            this.chtResult.Titles.Add(title1);
             // 
             // gbGraph
             // 

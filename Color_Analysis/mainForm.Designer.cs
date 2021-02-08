@@ -29,6 +29,9 @@ namespace Color_Analysis
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.gbLightSource = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -78,6 +81,8 @@ namespace Color_Analysis
             this.btnAdmin = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.chtResult = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.gbGraph = new System.Windows.Forms.GroupBox();
             this.gbLightSource.SuspendLayout();
             this.gbLens1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NumLens1T)).BeginInit();
@@ -86,6 +91,8 @@ namespace Color_Analysis
             this.gbLens3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NumLens3T)).BeginInit();
             this.gbResult.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chtResult)).BeginInit();
+            this.gbGraph.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbLightSource
@@ -560,6 +567,7 @@ namespace Color_Analysis
             this.btnCalc.TabIndex = 3;
             this.btnCalc.Text = "Calculate";
             this.btnCalc.UseVisualStyleBackColor = true;
+            this.btnCalc.Click += new System.EventHandler(this.btnCalc_Click);
             // 
             // TrsResult
             // 
@@ -590,7 +598,7 @@ namespace Color_Analysis
             // 
             // btnSet
             // 
-            this.btnSet.Location = new System.Drawing.Point(287, 568);
+            this.btnSet.Location = new System.Drawing.Point(784, 394);
             this.btnSet.Name = "btnSet";
             this.btnSet.Size = new System.Drawing.Size(105, 23);
             this.btnSet.TabIndex = 5;
@@ -600,7 +608,7 @@ namespace Color_Analysis
             // 
             // btnAdmin
             // 
-            this.btnAdmin.Location = new System.Drawing.Point(398, 568);
+            this.btnAdmin.Location = new System.Drawing.Point(895, 394);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(105, 23);
             this.btnAdmin.TabIndex = 6;
@@ -609,9 +617,9 @@ namespace Color_Analysis
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(255, 11);
+            this.btnUpdate.Location = new System.Drawing.Point(398, 11);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(255, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(112, 23);
             this.btnUpdate.TabIndex = 7;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -622,14 +630,41 @@ namespace Color_Analysis
             this.textBox4.Location = new System.Drawing.Point(12, 10);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(237, 24);
+            this.textBox4.Size = new System.Drawing.Size(379, 24);
             this.textBox4.TabIndex = 22;
+            // 
+            // chtResult
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chtResult.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chtResult.Legends.Add(legend2);
+            this.chtResult.Location = new System.Drawing.Point(6, 23);
+            this.chtResult.Name = "chtResult";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chtResult.Series.Add(series2);
+            this.chtResult.Size = new System.Drawing.Size(463, 346);
+            this.chtResult.TabIndex = 23;
+            this.chtResult.Text = "chart1";
+            // 
+            // gbGraph
+            // 
+            this.gbGraph.Controls.Add(this.chtResult);
+            this.gbGraph.Location = new System.Drawing.Point(525, 13);
+            this.gbGraph.Name = "gbGraph";
+            this.gbGraph.Size = new System.Drawing.Size(475, 375);
+            this.gbGraph.TabIndex = 23;
+            this.gbGraph.TabStop = false;
+            this.gbGraph.Text = "Graph";
             // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(522, 603);
+            this.ClientSize = new System.Drawing.Size(1012, 432);
+            this.Controls.Add(this.gbGraph);
             this.Controls.Add(this.ckLens3);
             this.Controls.Add(this.ckLens2);
             this.Controls.Add(this.textBox4);
@@ -657,6 +692,8 @@ namespace Color_Analysis
             ((System.ComponentModel.ISupportInitialize)(this.NumLens3T)).EndInit();
             this.gbResult.ResumeLayout(false);
             this.gbResult.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chtResult)).EndInit();
+            this.gbGraph.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -713,6 +750,8 @@ namespace Color_Analysis
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.CheckBox ckLens2;
         private System.Windows.Forms.CheckBox ckLens3;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chtResult;
+        private System.Windows.Forms.GroupBox gbGraph;
     }
 }
 

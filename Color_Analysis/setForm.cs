@@ -14,18 +14,11 @@ namespace Color_Analysis
 {
     public partial class setForm : Form
     {
-        private mainForm _mainform;
-        public mainForm mainform
+        private string _method = "";
+        public string method
         {
-            get { return _mainform; }
-            set { _mainform = value; }
-        }
-
-        private PointF _point = new PointF(3.0f, 3.0f);
-        public PointF point
-        {
-            get { return _point; }
-            set { _point = value; }
+            get { return _method; }
+            set { _method = value; }
         }
 
         public setForm()
@@ -33,74 +26,32 @@ namespace Color_Analysis
             InitializeComponent();
         }
 
-        public setForm(mainForm mf)
-        {
-            InitializeComponent();
-            this.mainform = mf;
-
-            for (int i = 0; i < mainform.LawX.Count; i++)
-            {
-                textBox1.Text += $"({mainform.LawX[i]}, {mainform.LawY[i]})\r\n";
-            }
-
-            textBox1.Text += "\r\n";
-            List<PointF> PointXY = sortPointsClockwise(mainform.LawX, mainform.LawY);
-            foreach (PointF pF in PointXY)
-            {
-                textBox1.Text += $"({pF.X}, {pF.Y})\r\n";
-            }
-        }
-
-        private bool isInPoly(Point pt)
-        {
-            return false;
-        }
-
-        private List<PointF> sortPointsClockwise(List<double> px, List<double>py)
-        {// https://www.crocus.co.kr/1634?category=209527
-            int size = px.Count;
-            double averageX = 0;
-            double averageY = 0;
-            List<PointF> point = new List<PointF>(); 
-            for (int i = 0; i < size; i++) 
-            {
-                averageX += px[i];
-                averageY += py[i];
-                point.Add(new PointF((float)px[i], (float)py[i]));
-            }
-
-            double finalAverageX = averageX / (double) size;
-            double finalAverageY = averageY / (double)size;
-
-            point.Sort(delegate (PointF lhs, PointF rhs)
-            {
-                double lhsAngle = Math.Atan2(lhs.Y - finalAverageY, lhs.X - finalAverageX);
-                double rhsAngle = Math.Atan2(rhs.Y - finalAverageY, rhs.X - finalAverageX);
-
-                // Depending on the coordinate system, you might need to reverse these two conditions 
-                if (lhsAngle < rhsAngle)
-                    return -1;
-                if (lhsAngle > rhsAngle)
-                    return 1;
-                return 0;
-            });
-            return point;
-        }
-
         private void rdDefault_Change(object sender, EventArgs e)
         {
             if (rdDefault.Checked == true)
+            {
                 rdDaehyeon.Checked = false;
+                method = "default";
+            }
             else if (rdDefault.Checked == false)
+            {
                 rdDaehyeon.Checked = true;
+                method = "detail";
+            }
         }
 
         private void rdDaehyeon_Change(object sender, EventArgs e)
         {
             if (rdDaehyeon.Checked == true)
+            {
                 rdDefault.Checked = false;
+                method = "detail";
+            }
             else if (rdDaehyeon.Checked == false)
+            {
                 rdDefault.Checked = true;
+                method = "default";
+            }
         }
 
         private void btnOK_Click(object sender, EventArgs e)

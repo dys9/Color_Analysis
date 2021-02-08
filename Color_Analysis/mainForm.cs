@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using static System.Windows.Forms.ComboBox;
 // https://stackoverflow.com/questions/42107207/draw-cie-color-space-in-mschart // Draw Graph
 // https://link2me.tistory.com/857 // Communication for Forms
@@ -29,11 +30,11 @@ namespace Color_Analysis
             set { _LawY = LawY; }
         }
 
-        private List<double> _Lens1 = new List<double>() { 1.1, 2.2, 3.3 };
-        public List<double> Lens1
+        private PointF _PointResult = new PointF(3.3f, 3.3f);
+        public PointF PointResult
         {
-            get { return _Lens1; }
-            set { _Lens1 = Lens1; }
+            get { return _PointResult; }
+            set { _PointResult = value; }
         }
 
         public const string colorPath = @"D:\이대현\WORK_SPACE\Project_C#\Color_Analysis\Color_Analysis\Color";
@@ -66,7 +67,7 @@ namespace Color_Analysis
 
         private void btnSet_Click(object sender, EventArgs e)
         {
-            setForm setform = new setForm(this);
+            setForm setform = new setForm();
             setform.Owner = this;
             setform.ShowDialog();
         }
@@ -136,8 +137,62 @@ namespace Color_Analysis
                         }
                     }
                 }
-
             }
+            List<PointF> Point_temp = sortPointsClockwise(LawX, LawY);
+            LawX.Clear();
+            LawY.Clear();
+
+            for (int i = 0; i < Point_temp.Count; i++)
+            {
+                LawX.Add((double) Point_temp[i].X);
+                LawY.Add((double) Point_temp[i].Y);
+            }
+        }
+
+        private List<PointF> sortPointsClockwise(List<double> px, List<double> py)
+        {// https://www.crocus.co.kr/1634?category=209527
+            int size = px.Count;
+            double averageX = 0;
+            double averageY = 0;
+            List<PointF> point = new List<PointF>();
+            for (int i = 0; i < size; i++)
+            {
+                averageX += px[i];
+                averageY += py[i];
+                point.Add(new PointF((float)px[i], (float)py[i]));
+            }
+
+            double finalAverageX = averageX / (double)size;
+            double finalAverageY = averageY / (double)size;
+
+            point.Sort(delegate (PointF lhs, PointF rhs)
+            {
+                double lhsAngle = Math.Atan2(lhs.Y - finalAverageY, lhs.X - finalAverageX);
+                double rhsAngle = Math.Atan2(rhs.Y - finalAverageY, rhs.X - finalAverageX);
+
+                // Depending on the coordinate system, you might need to reverse these two conditions 
+                if (lhsAngle < rhsAngle)
+                    return -1;
+                if (lhsAngle > rhsAngle)
+                    return 1;
+                return 0;
+            });
+            return point;
+        }
+        private void DrawGraph()
+        {
+            chtResult.Series.Clear();
+
+            var series = new Series("Finance");
+
+            // Frist parameter is X-Axis and Second is Collection of Y- Axis
+            series.Points.DataBindXY(new[] { 2001, 2002, 2003, 2004 }, new[] { 100, 200, 90, 150 });
+            chtResult.Series.Add(series);
+        }
+
+        private void btnCalc_Click(object sender, EventArgs e)
+        {
+            DrawGraph();
         }
     }
 }

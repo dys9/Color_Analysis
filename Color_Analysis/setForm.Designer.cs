@@ -29,30 +29,18 @@ namespace Color_Analysis
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rdDaehyeon = new System.Windows.Forms.RadioButton();
             this.rdDefault = new System.Windows.Forms.RadioButton();
-            this.btnCancle = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(13, 13);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(373, 133);
-            this.textBox1.TabIndex = 0;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.rdDaehyeon);
             this.groupBox1.Controls.Add(this.rdDefault);
-            this.groupBox1.Location = new System.Drawing.Point(13, 153);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 78);
             this.groupBox1.TabIndex = 1;
@@ -83,19 +71,9 @@ namespace Color_Analysis
             this.rdDefault.UseVisualStyleBackColor = true;
             this.rdDefault.CheckedChanged += new System.EventHandler(this.rdDefault_Change);
             // 
-            // btnCancle
-            // 
-            this.btnCancle.Location = new System.Drawing.Point(311, 267);
-            this.btnCancle.Name = "btnCancle";
-            this.btnCancle.Size = new System.Drawing.Size(75, 23);
-            this.btnCancle.TabIndex = 2;
-            this.btnCancle.Text = "Cancle";
-            this.btnCancle.UseVisualStyleBackColor = true;
-            this.btnCancle.Click += new System.EventHandler(this.btnCancle_Click);
-            // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(230, 267);
+            this.btnOK.Location = new System.Drawing.Point(79, 96);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 2;
@@ -107,28 +85,22 @@ namespace Color_Analysis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(398, 302);
+            this.ClientSize = new System.Drawing.Size(224, 125);
             this.Controls.Add(this.btnOK);
-            this.Controls.Add(this.btnCancle);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.textBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "setForm";
             this.Text = "setForm";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rdDaehyeon;
         private System.Windows.Forms.RadioButton rdDefault;
-        private System.Windows.Forms.Button btnCancle;
         private System.Windows.Forms.Button btnOK;
     }
 }

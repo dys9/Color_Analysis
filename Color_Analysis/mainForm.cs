@@ -138,23 +138,36 @@ namespace Color_Analysis
                     }
                 }
             }
-            List<PointF> Point_temp = sortPointsClockwise(LawX, LawY);
+            string temp = "";
+            for ( int i = 0; i < LawX.Count; i++)
+            {
+                temp += $"({LawX[i]}, {LawY[i]})\r\n";
+            }
+            List<PointF> Point_temp = SortPointPoly(LawX, LawY);
             LawX.Clear();
             LawY.Clear();
 
             for (int i = 0; i < Point_temp.Count; i++)
             {
-                LawX.Add((double) Point_temp[i].X);
-                LawY.Add((double) Point_temp[i].Y);
+                LawX.Add(Convert.ToDouble((double)(new decimal(Point_temp[i].X))));
+                LawY.Add(Convert.ToDouble((double)(new decimal(Point_temp[i].Y))));
             }
+
+            temp += "\r\n";
+            for (int i = 0; i < LawX.Count; i++)
+            {
+                temp += $"({LawX[i]}, {LawY[i]})\r\n";
+            }
+            MessageBox.Show(temp);
         }
 
-        private List<PointF> sortPointsClockwise(List<double> px, List<double> py)
+        private List<PointF> SortPointPoly(List<double> px, List<double> py)
         {// https://www.crocus.co.kr/1634?category=209527
             int size = px.Count;
             double averageX = 0;
             double averageY = 0;
             List<PointF> point = new List<PointF>();
+
             for (int i = 0; i < size; i++)
             {
                 averageX += px[i];
@@ -162,8 +175,8 @@ namespace Color_Analysis
                 point.Add(new PointF((float)px[i], (float)py[i]));
             }
 
-            double finalAverageX = averageX / (double)size;
-            double finalAverageY = averageY / (double)size;
+            double finalAverageX = averageX / Convert.ToDouble(size);
+            double finalAverageY = averageY / Convert.ToDouble(size);
 
             point.Sort(delegate (PointF lhs, PointF rhs)
             {
@@ -218,7 +231,6 @@ namespace Color_Analysis
                 chtResult.Series["Point"].ChartType = SeriesChartType.Point;
                 chtResult.Series["Point"].IsVisibleInLegend = false;
                 pPoint.Points.AddXY((double)PointResult.X, (double)PointResult.Y);
-
             }
         }
 
@@ -238,7 +250,6 @@ namespace Color_Analysis
             }
 
             double result = Math.Ceiling(input * Math.Pow(10, cnt)) / Math.Pow(10, cnt);
-            MessageBox.Show(d.ToString() + ", " + result.ToString());
             return result;
         }
 

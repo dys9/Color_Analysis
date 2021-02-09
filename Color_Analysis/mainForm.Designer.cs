@@ -598,9 +598,9 @@ namespace Color_Analysis
             // 
             // btnSet
             // 
-            this.btnSet.Location = new System.Drawing.Point(784, 394);
+            this.btnSet.Location = new System.Drawing.Point(346, 10);
             this.btnSet.Name = "btnSet";
-            this.btnSet.Size = new System.Drawing.Size(105, 23);
+            this.btnSet.Size = new System.Drawing.Size(75, 23);
             this.btnSet.TabIndex = 5;
             this.btnSet.Text = "Set";
             this.btnSet.UseVisualStyleBackColor = true;
@@ -608,18 +608,18 @@ namespace Color_Analysis
             // 
             // btnAdmin
             // 
-            this.btnAdmin.Location = new System.Drawing.Point(895, 394);
+            this.btnAdmin.Location = new System.Drawing.Point(427, 10);
             this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(105, 23);
+            this.btnAdmin.Size = new System.Drawing.Size(83, 23);
             this.btnAdmin.TabIndex = 6;
             this.btnAdmin.Text = "Admin";
             this.btnAdmin.UseVisualStyleBackColor = true;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(398, 11);
+            this.btnUpdate.Location = new System.Drawing.Point(271, 10);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(112, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(69, 23);
             this.btnUpdate.TabIndex = 7;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -630,7 +630,7 @@ namespace Color_Analysis
             this.textBox4.Location = new System.Drawing.Point(12, 10);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(379, 24);
+            this.textBox4.Size = new System.Drawing.Size(253, 24);
             this.textBox4.TabIndex = 22;
             // 
             // chtResult
@@ -641,7 +641,7 @@ namespace Color_Analysis
             this.chtResult.Legends.Add(legend1);
             this.chtResult.Location = new System.Drawing.Point(6, 23);
             this.chtResult.Name = "chtResult";
-            this.chtResult.Size = new System.Drawing.Size(463, 346);
+            this.chtResult.Size = new System.Drawing.Size(463, 378);
             this.chtResult.TabIndex = 23;
             this.chtResult.Text = "chart1";
             title1.Name = "Result";
@@ -652,7 +652,7 @@ namespace Color_Analysis
             this.gbGraph.Controls.Add(this.chtResult);
             this.gbGraph.Location = new System.Drawing.Point(525, 13);
             this.gbGraph.Name = "gbGraph";
-            this.gbGraph.Size = new System.Drawing.Size(475, 375);
+            this.gbGraph.Size = new System.Drawing.Size(475, 407);
             this.gbGraph.TabIndex = 23;
             this.gbGraph.TabStop = false;
             this.gbGraph.Text = "Graph";

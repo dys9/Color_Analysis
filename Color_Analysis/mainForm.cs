@@ -30,7 +30,7 @@ namespace Color_Analysis
             set { _LawY = LawY; }
         }
 
-        private PointF _PointResult = new PointF(0.57f, 0.42f);
+        private PointF _PointResult = new PointF(0.64f, 0.55f);// 0.57f, 0.42f // 0.64f, 0.55f
         public PointF PointResult
         {
             get { return _PointResult; }
@@ -138,11 +138,7 @@ namespace Color_Analysis
                     }
                 }
             }
-            string temp = "";
-            for ( int i = 0; i < LawX.Count; i++)
-            {
-                temp += $"({LawX[i]}, {LawY[i]})\r\n";
-            }
+
             List<PointF> Point_temp = SortPointPoly(LawX, LawY);
             LawX.Clear();
             LawY.Clear();
@@ -152,13 +148,6 @@ namespace Color_Analysis
                 LawX.Add(Convert.ToDouble((double)(new decimal(Point_temp[i].X))));
                 LawY.Add(Convert.ToDouble((double)(new decimal(Point_temp[i].Y))));
             }
-
-            temp += "\r\n";
-            for (int i = 0; i < LawX.Count; i++)
-            {
-                temp += $"({LawX[i]}, {LawY[i]})\r\n";
-            }
-            MessageBox.Show(temp);
         }
 
         private List<PointF> SortPointPoly(List<double> px, List<double> py)
@@ -212,15 +201,20 @@ namespace Color_Analysis
                 chtResult.ChartAreas["Result"].AxisY.Minimum = (LawY.Min() - Yinterval);
                 chtResult.ChartAreas["Result"].AxisY.Maximum = (LawY.Max() + Yinterval);
 
-/*                chtResult.ChartAreas["Result"].AxisX.Minimum = 0.53;
-                chtResult.ChartAreas["Result"].AxisX.Maximum = 0.62;
-                chtResult.ChartAreas["Result"].AxisY.Minimum = 0.36;
-                chtResult.ChartAreas["Result"].AxisY.Maximum = 0.47;*/
+                if (PointResult.X < chtResult.ChartAreas["Result"].AxisX.Minimum)
+                    chtResult.ChartAreas["Result"].AxisX.Minimum = PointResult.X - Xinterval;
+                if (PointResult.X > chtResult.ChartAreas["Result"].AxisX.Maximum)
+                    chtResult.ChartAreas["Result"].AxisX.Minimum = PointResult.X + Xinterval;
+                if (PointResult.Y < chtResult.ChartAreas["Result"].AxisY.Minimum)
+                    chtResult.ChartAreas["Result"].AxisY.Minimum = PointResult.Y - Yinterval;
+                if (PointResult.Y > chtResult.ChartAreas["Result"].AxisY.Maximum)
+                    chtResult.ChartAreas["Result"].AxisY.Maximum = PointResult.Y + Yinterval;
 
                 Series Lines = chtResult.Series.Add("Lines"); //새로운 series 생성
                 chtResult.Series["Lines"].IsVisibleInLegend = false;
                 Lines.ChartType = SeriesChartType.Line;
-                
+                Lines.BorderWidth = 2;
+
                 for (int i = 0; i < LawX.Count; i++)
                 {
                     Lines.Points.AddXY(LawX[i], LawY[i]);

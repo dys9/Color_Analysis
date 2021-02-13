@@ -63,6 +63,7 @@
     <Compile Include="setForm.Designer.cs">
       <DependentUpon>setForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Update.cs" />
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -47,10 +47,10 @@ namespace Color_Analysis
             set { _graphDetail = value; }
         }
 
-        public const string colorPath = @"D:\이대현\WORK_SPACE\Project_C#\Color_Analysis\Color_Analysis\Color";
-        public const string lawPath = @"D:\이대현\WORK_SPACE\Project_C#\Color_Analysis\Color_Analysis\Law";
-        public const string lensPath = @"D:\이대현\WORK_SPACE\Project_C#\Color_Analysis\Color_Analysis\Lens";
-        public const string lightPath = @"D:\이대현\WORK_SPACE\Project_C#\Color_Analysis\Color_Analysis\Light";
+        public const string colorPath = @"D:\이대현\WORK_SPACE\Project_C#\Color_Analysis\Color_Analysis\client_data\Color";
+        public const string lawPath = @"D:\이대현\WORK_SPACE\Project_C#\Color_Analysis\Color_Analysis\client_data\Law";
+        public const string lensPath = @"D:\이대현\WORK_SPACE\Project_C#\Color_Analysis\Color_Analysis\client_data\Lens";
+        public const string lightPath = @"D:\이대현\WORK_SPACE\Project_C#\Color_Analysis\Color_Analysis\client_data\Light";
 
 
         public mainForm()
@@ -172,6 +172,19 @@ namespace Color_Analysis
 
             graphDetail.DrawGraph();
             graphDetail.chtResult.Show();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            Update update = new Update();
+            List<string> ListDirs = update.ListInDir();
+
+            string temp = "";
+            foreach (var item in ListDirs)
+            {
+                temp += item + "\r\n";
+            }
+            MessageBox.Show(temp);
         }
     }
 }

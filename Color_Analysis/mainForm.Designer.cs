@@ -29,9 +29,9 @@ namespace Color_Analysis
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.gbLightSource = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -623,6 +623,7 @@ namespace Color_Analysis
             this.btnUpdate.TabIndex = 7;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // textBox4
             // 
@@ -635,17 +636,17 @@ namespace Color_Analysis
             // 
             // chtResult
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chtResult.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chtResult.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.chtResult.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chtResult.Legends.Add(legend3);
             this.chtResult.Location = new System.Drawing.Point(6, 23);
             this.chtResult.Name = "chtResult";
             this.chtResult.Size = new System.Drawing.Size(463, 378);
             this.chtResult.TabIndex = 23;
             this.chtResult.Text = "chart1";
-            title1.Name = "Result";
-            this.chtResult.Titles.Add(title1);
+            title3.Name = "Result";
+            this.chtResult.Titles.Add(title3);
             // 
             // gbGraph
             // 

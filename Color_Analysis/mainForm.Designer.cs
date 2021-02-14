@@ -29,9 +29,9 @@ namespace Color_Analysis
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.gbLightSource = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -80,7 +80,7 @@ namespace Color_Analysis
             this.btnSet = new System.Windows.Forms.Button();
             this.btnAdmin = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbUpdate = new System.Windows.Forms.TextBox();
             this.chtResult = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.gbGraph = new System.Windows.Forms.GroupBox();
             this.gbLightSource.SuspendLayout();
@@ -625,28 +625,28 @@ namespace Color_Analysis
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // textBox4
+            // tbUpdate
             // 
-            this.textBox4.BackColor = System.Drawing.Color.Cornsilk;
-            this.textBox4.Location = new System.Drawing.Point(12, 10);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(253, 24);
-            this.textBox4.TabIndex = 22;
+            this.tbUpdate.BackColor = System.Drawing.Color.Cornsilk;
+            this.tbUpdate.Location = new System.Drawing.Point(12, 10);
+            this.tbUpdate.Name = "tbUpdate";
+            this.tbUpdate.ReadOnly = true;
+            this.tbUpdate.Size = new System.Drawing.Size(253, 24);
+            this.tbUpdate.TabIndex = 22;
             // 
             // chtResult
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chtResult.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chtResult.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.chtResult.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chtResult.Legends.Add(legend1);
             this.chtResult.Location = new System.Drawing.Point(6, 23);
             this.chtResult.Name = "chtResult";
             this.chtResult.Size = new System.Drawing.Size(463, 378);
             this.chtResult.TabIndex = 23;
             this.chtResult.Text = "chart1";
-            title3.Name = "Result";
-            this.chtResult.Titles.Add(title3);
+            title1.Name = "Result";
+            this.chtResult.Titles.Add(title1);
             // 
             // gbGraph
             // 
@@ -666,7 +666,7 @@ namespace Color_Analysis
             this.Controls.Add(this.gbGraph);
             this.Controls.Add(this.ckLens3);
             this.Controls.Add(this.ckLens2);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.tbUpdate);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.btnSet);
@@ -746,7 +746,7 @@ namespace Color_Analysis
         private System.Windows.Forms.Button btnSet;
         private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbUpdate;
         private System.Windows.Forms.CheckBox ckLens2;
         private System.Windows.Forms.CheckBox ckLens3;
         private System.Windows.Forms.DataVisualization.Charting.Chart chtResult;

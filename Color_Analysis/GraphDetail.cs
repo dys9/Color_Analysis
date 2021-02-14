@@ -43,8 +43,6 @@ namespace Color_Analysis
             this.chtResult = Cht;
         }
 
-
-
         private double CustomCeil(double input)
         {
             if (input > 1.0)

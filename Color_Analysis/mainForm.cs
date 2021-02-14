@@ -165,7 +165,7 @@ namespace Color_Analysis
             string temp = "";
             for (int i = 0; i < Point_temp.Count; i++)
             {
-                graphDetail.LawX.Add(Convert.ToDouble((double)(new decimal(Point_temp[i].X))));
+                graphDetail.LawX.Add(Convert.ToDouble((double)(new decimal(Point_temp[i].X)))); 
                 graphDetail.LawY.Add(Convert.ToDouble((double)(new decimal(Point_temp[i].Y))));
                 temp += $"({graphDetail.LawX[i]}, {graphDetail.LawY[i]})\r\n";
             }
@@ -176,15 +176,16 @@ namespace Color_Analysis
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            Update update = new Update();
-            List<string> ListDirs = update.ListInDir();
+            string server_data_path = @"D:\server_data";
+            string client_data_path = @"D:\이대현\WORK_SPACE\Project_C#\Color_Analysis\Color_Analysis\client_data";
 
-            string temp = "";
-            foreach (var item in ListDirs)
+            Update update = new Update(server_data_path, client_data_path);
+            List<string> DiffrentDIr = update.GetDiffrentDir();
+
+            foreach(var item in DiffrentDIr)
             {
-                temp += item + "\r\n";
+                MessageBox.Show(item);
             }
-            MessageBox.Show(temp);
         }
     }
 }

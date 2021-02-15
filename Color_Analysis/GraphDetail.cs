@@ -62,7 +62,7 @@ namespace Color_Analysis
             return result;
         }
 
-        public List<PointF> SortPointPoly(List<double> px, List<double> py)
+        private List<PointF> SortPointPoly(List<double> px, List<double> py)
         {
             int size = px.Count;
             double averageX = 0;
@@ -98,6 +98,18 @@ namespace Color_Analysis
         {
             if (LawX.Count + LawY.Count > 0)
             {
+                List<PointF> Point_temp = SortPointPoly(this.LawX, this.LawY);
+                this.LawX.Clear();
+                this.LawY.Clear();
+
+                string temp = "";
+                for (int i = 0; i < Point_temp.Count; i++)
+                {
+                    this.LawX.Add(Convert.ToDouble((double)(new decimal(Point_temp[i].X))));
+                    this.LawY.Add(Convert.ToDouble((double)(new decimal(Point_temp[i].Y))));
+                    temp += $"({this.LawX[i]}, {this.LawY[i]})\r\n";
+                }
+
                 chtResult.Series.Clear();
                 chtResult.ChartAreas.Clear();
 

@@ -628,10 +628,12 @@ namespace Color_Analysis
             // tbUpdate
             // 
             this.tbUpdate.BackColor = System.Drawing.Color.Cornsilk;
+            this.tbUpdate.Font = new System.Drawing.Font("굴림", 6.886957F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbUpdate.ForeColor = System.Drawing.Color.DarkGreen;
             this.tbUpdate.Location = new System.Drawing.Point(12, 10);
             this.tbUpdate.Name = "tbUpdate";
             this.tbUpdate.ReadOnly = true;
-            this.tbUpdate.Size = new System.Drawing.Size(253, 24);
+            this.tbUpdate.Size = new System.Drawing.Size(253, 20);
             this.tbUpdate.TabIndex = 22;
             // 
             // chtResult

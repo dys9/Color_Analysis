@@ -76,6 +76,31 @@ namespace Color_Analysis
 
             graphDetail = new GraphDetail(chtResult);
             graphDetail.PointResult = PointResult;
+
+            string server_data_path = @"D:\server_data\";
+            string client_data_path = @"D:\이대현\WORK_SPACE\Project_C#\Color_Analysis\Color_Analysis\client_data\";
+
+            try
+            {
+                Update update = new Update(server_data_path, client_data_path);
+                List<string> DiffrentDIr = update.GetChangedDir(); // 수정한 날짜가 다른 폴더 List
+
+                #region for Test
+                foreach (var Folder in DiffrentDIr) // 수정한 날짜가 다른 폴더 List 탐색
+                {
+                    List<string> FileNames = update.GetChangedFileNames(Folder); // 수정한 날짜가 다른 폴더 속 수정한 날짜가 다른 File List
+                    foreach (var ChangedFile in FileNames)
+                    {
+                        update.GetDataFromServer(Folder, ChangedFile);
+                    }
+                }
+                #endregion
+                tbUpdate.Text = "입력 데이터가 최신 버전 입니다.";
+            }
+            catch (System.NullReferenceException)
+            {
+
+            }
         }
 
         private void btnSet_Click(object sender, EventArgs e)
@@ -148,8 +173,10 @@ namespace Color_Analysis
                             LawX.Add((double)(new decimal(Convert.ToDouble(vs[0]))));
                             LawY.Add((double)(new decimal(Convert.ToDouble(vs[1]))));
 
+                            #region SET GraphDetail's LawX & LawY
                             graphDetail.LawX = LawX.ToList();
                             graphDetail.LawY = LawY.ToList();
+                            #endregion
                         }
                     }
                 }
@@ -158,33 +185,35 @@ namespace Color_Analysis
 
         private void btnCalc_Click(object sender, EventArgs e)
         {
-            List<PointF> Point_temp = graphDetail.SortPointPoly(graphDetail.LawX, graphDetail.LawY);
-            graphDetail.LawX.Clear();
-            graphDetail.LawY.Clear();
-
-            string temp = "";
-            for (int i = 0; i < Point_temp.Count; i++)
-            {
-                graphDetail.LawX.Add(Convert.ToDouble((double)(new decimal(Point_temp[i].X)))); 
-                graphDetail.LawY.Add(Convert.ToDouble((double)(new decimal(Point_temp[i].Y))));
-                temp += $"({graphDetail.LawX[i]}, {graphDetail.LawY[i]})\r\n";
-            }
-
             graphDetail.DrawGraph();
             graphDetail.chtResult.Show();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            string server_data_path = @"D:\server_data";
-            string client_data_path = @"D:\이대현\WORK_SPACE\Project_C#\Color_Analysis\Color_Analysis\client_data";
+            string server_data_path = @"D:\server_data\";
+            string client_data_path = @"D:\이대현\WORK_SPACE\Project_C#\Color_Analysis\Color_Analysis\client_data\";
 
-            Update update = new Update(server_data_path, client_data_path);
-            List<string> DiffrentDIr = update.GetDiffrentDir();
-
-            foreach(var item in DiffrentDIr)
+            try
             {
-                MessageBox.Show(item);
+                Update update = new Update(server_data_path, client_data_path);
+                List<string> DiffrentDIr = update.GetChangedDir(); // 수정한 날짜가 다른 폴더 List
+
+                #region for Test
+                foreach (var Folder in DiffrentDIr) // 수정한 날짜가 다른 폴더 List 탐색
+                {
+                    List<string> FileNames = update.GetChangedFileNames(Folder); // 수정한 날짜가 다른 폴더 속 수정한 날짜가 다른 File List
+                    foreach (var ChangedFile in FileNames)
+                    {
+                        update.GetDataFromServer(Folder, ChangedFile);
+                        tbUpdate.Text = ChangedFile + " is Updated! " + "입력 데이터가 최신 버전 입니다.";
+                    }
+                }
+                #endregion
+            }
+            catch (System.NullReferenceException)
+            {
+
             }
         }
     }

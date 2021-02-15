@@ -9,9 +9,6 @@ namespace Color_Analysis
 {
     public class Update
     {
-        public const string server_date_path = @"D:\server_data";
-        public const string client_date_path = @"D:\이대현\WORK_SPACE\Project_C#\Color_Analysis\Color_Analysis\client_data";
-
         private string _server_data_path;
         public string server_data_path
         {
@@ -32,7 +29,7 @@ namespace Color_Analysis
             this.client_data_path = Cpath;
         }
 
-        private List<string> ListInDir(string Path)
+        private List<string> GetDirNames(string Path)
         {
             if (System.IO.Directory.Exists(Path))
             {
@@ -60,10 +57,10 @@ namespace Color_Analysis
             }
         }
 
-        public List<string> GetDiffrentDir()
+        public List<string> GetChangedDir()
         {
-            List<string> DirServer = ListInDir(this.server_data_path);
-            List<string> DirClient = ListInDir(this.client_data_path);
+            List<string> DirServer = GetDirNames(this.server_data_path);
+            List<string> DirClient = GetDirNames(this.client_data_path);
 
             if (DirServer.Count == 0)
             {
@@ -77,7 +74,8 @@ namespace Color_Analysis
             }
             if (DirServer.Count != DirClient.Count)
             {
-                System.Windows.Forms.MessageBox.Show("DirServer & DirClient Count is not Same!");
+                System.Windows.Forms.MessageBox.Show("DirServer & DirClient Count is not Same!\r\n" +
+                    "Set Only Color, Lens, Law, Light Folders");
                 return null;
             }
 
@@ -107,11 +105,71 @@ namespace Color_Analysis
             return DiffrentDir;
         }
 
-        public void GetDataFromServer(List<string> DiffrentDir)
+        public List<string> GetChangedFileNames(string Folder)
         {
+            if (Folder == null)
+            {
+                System.Windows.Forms.MessageBox.Show("Dir is Null!");
+                return null;
+            }
+            if (!System.IO.Directory.Exists(client_data_path + Folder))
+            {
+                System.Windows.Forms.MessageBox.Show("Client's " + Folder + " is Empty.");
+                return null;
+            }
+            if (!System.IO.Directory.Exists(server_data_path + Folder))
+            {
+                System.Windows.Forms.MessageBox.Show("Server's " + Folder + " is Empty.");
+                return null;
+            }
 
+            System.IO.DirectoryInfo Sdi = new System.IO.DirectoryInfo(server_data_path + Folder);
+            System.IO.DirectoryInfo Cdi = new System.IO.DirectoryInfo(client_data_path + Folder);
+
+            List<string> ChangedFileNames = new List<string>();
+            List<string> TempFileNames = new List<string>();
+
+            foreach (System.IO.FileInfo Sinfo in Sdi.GetFiles())
+            {
+                TempFileNames.Add(Sinfo.Name);
+                foreach (System.IO.FileInfo Cinfo in Cdi.GetFiles())
+                {
+                    if (Sinfo.Name.Equals(Cinfo.Name))
+                    {
+                        TempFileNames.Remove(Sinfo.Name);
+                        if (!Sinfo.LastWriteTime.Equals(Cinfo.LastWriteTime))
+                        {
+                            ChangedFileNames.Add(Sinfo.Name);
+                        }
+                    }
+                }
+            }
+
+            if (TempFileNames.Count != 0)
+            {
+                ChangedFileNames.AddRange(TempFileNames);
+            }
+            
+            return ChangedFileNames;
+        }
+
+        public bool GetDataFromServer(string Folder, string ChangedFile)
+        {
+            if (Folder == null & ChangedFile == null)
+            {
+                System.Windows.Forms.MessageBox.Show("string Folder & ChangedFile is null!");
+                return false;
+            }
+            
+            if (System.IO.Directory.Exists(this.server_data_path + Folder) && System.IO.Directory.Exists(this.client_data_path + Folder))
+            {
+                string sourceFile = System.IO.Path.Combine(server_data_path + Folder, ChangedFile);
+                string destFile = System.IO.Path.Combine(client_data_path + Folder, ChangedFile);
+
+                System.IO.File.Copy(sourceFile, destFile, true);
+                return true;
+            }
+            return false;
         }
     }
-
-
 }

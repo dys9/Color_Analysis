@@ -567,7 +567,7 @@ namespace Color_Analysis
             this.btnCalc.TabIndex = 3;
             this.btnCalc.Text = "Calculate";
             this.btnCalc.UseVisualStyleBackColor = true;
-            this.btnCalc.Click += new System.EventHandler(this.btnCalc_Click);
+            this.btnCalc.Click += new System.EventHandler(this.btnUpdate_Click) + new System.EventHandler(this.btnCalc_Click);
             // 
             // TrsResult
             // 

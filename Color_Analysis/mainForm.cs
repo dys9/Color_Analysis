@@ -74,18 +74,21 @@ namespace Color_Analysis
             cbLens2T.Items.AddRange(new string[] {"1T", "2T", "3T", "4T", "Input"});
             cbLens3T.Items.AddRange(new string[] {"1T", "2T", "3T", "4T", "Input"});
 
+            #region for Drawing Graph
             graphDetail = new GraphDetail(chtResult);
             graphDetail.PointResult = PointResult;
+            #endregion
 
+            #region for Update Event
             string server_data_path = @"D:\server_data\";
             string client_data_path = @"D:\이대현\WORK_SPACE\Project_C#\Color_Analysis\Color_Analysis\client_data\";
-
+            
             try
             {
                 Update update = new Update(server_data_path, client_data_path);
                 List<string> DiffrentDIr = update.GetChangedDir(); // 수정한 날짜가 다른 폴더 List
 
-                #region for Test
+                
                 foreach (var Folder in DiffrentDIr) // 수정한 날짜가 다른 폴더 List 탐색
                 {
                     List<string> FileNames = update.GetChangedFileNames(Folder); // 수정한 날짜가 다른 폴더 속 수정한 날짜가 다른 File List
@@ -94,13 +97,14 @@ namespace Color_Analysis
                         update.GetDataFromServer(Folder, ChangedFile);
                     }
                 }
-                #endregion
+                
                 tbUpdate.Text = "입력 데이터가 최신 버전 입니다.";
             }
             catch (System.NullReferenceException)
             {
 
             }
+            #endregion
         }
 
         private void btnSet_Click(object sender, EventArgs e)
@@ -185,8 +189,15 @@ namespace Color_Analysis
 
         private void btnCalc_Click(object sender, EventArgs e)
         {
-            graphDetail.DrawGraph();
-            graphDetail.chtResult.Show();
+            if (LawX.Count + LawY.Count > 0)
+            {
+                graphDetail.DrawGraph();
+                graphDetail.chtResult.Series["Lines"].Color = Color.Black;
+                graphDetail.chtResult.Series["Point"].Color = Color.Black;
+                graphDetail.chtResult.Show();
+
+                MessageBox.Show(graphDetail.chtResult.Series.Count.ToString());
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

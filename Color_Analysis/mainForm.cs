@@ -33,13 +33,6 @@ namespace Color_Analysis
             set { _LawY = LawY; }
         }
 
-        private PointF _PointResult = new PointF(0.5664f, 0.4293f);// 0.57f, 0.42f // 0.64f, 0.55f
-        public PointF PointResult
-        {
-            get { return _PointResult; }
-            set { _PointResult = value; }
-        }
-
         private GraphDetail _graphDetail;
         public GraphDetail graphDetail
         {
@@ -76,7 +69,6 @@ namespace Color_Analysis
 
             #region for Drawing Graph
             graphDetail = new GraphDetail(chtResult);
-            graphDetail.PointResult = PointResult;
             #endregion
 
             #region for Update Event

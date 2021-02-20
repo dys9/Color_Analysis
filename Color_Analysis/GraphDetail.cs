@@ -31,7 +31,7 @@ namespace Color_Analysis
             set { _LawY = value; }
         }
 
-        private PointF _PointResult = new PointF(0.6554f, 0.765f);// 0.57f, 0.42f // 0.64f, 0.55f
+        private PointF _PointResult = new PointF(0.74f, 0.7293f);// 0.57f, 0.42f // 0.64f, 0.55f
         public PointF PointResult
         {
             get { return _PointResult; }
@@ -58,7 +58,9 @@ namespace Color_Analysis
                 d *= 10;
             }
 
-            double result = Math.Ceiling(input * Math.Pow(10, cnt+1)) / Math.Pow(10, cnt+1);
+            double result = Math.Truncate(input * Math.Pow(10, cnt+1)) / Math.Pow(10, cnt+1);
+            //result = Math.Ceiling(input * Math.Pow(10, cnt)) / Math.Pow(10, cnt);
+
             return result;
         }
 
@@ -110,14 +112,33 @@ namespace Color_Analysis
                     temp += $"({this.LawX[i]}, {this.LawY[i]})\r\n";
                 }
 
+                //////////////////////////////////////////////////////////////////
+
                 chtResult.Series.Clear();
                 chtResult.ChartAreas.Clear();
+
+                ChartArea GraphArea = chtResult.ChartAreas.Add("Result");
+
+                Series Lines = chtResult.Series.Add("Lines"); //새로운 series 생성
+                Lines.IsVisibleInLegend = false;
+                Lines.ChartType = SeriesChartType.Line;
+                Lines.BorderWidth = 2;
+
+                for (int i = 0; i < LawX.Count; i++)
+                {
+                    Lines.Points.AddXY(LawX[i], LawY[i]);
+                    if (i == LawX.Count - 1) Lines.Points.AddXY(LawX[0], LawY[0]);
+                }
+
+                Series pPoint = chtResult.Series.Add("Point");
+                pPoint.ChartType = SeriesChartType.Point;
+                pPoint.IsVisibleInLegend = false;
+                pPoint.Color = Color.Red;
+                pPoint.Points.AddXY((double)PointResult.X, (double)PointResult.Y);
 
                 double Xinterval = CustomTruncate(LawX.Max() - LawX.Min());
                 double Yinterval = CustomTruncate(LawY.Max() - LawY.Min());
                 Xinterval = 0.01; Yinterval = 0.01;
-
-                ChartArea GraphArea = chtResult.ChartAreas.Add("Result");
 
                 GraphArea.AxisX.Interval = Xinterval;
                 GraphArea.AxisX.Minimum = CustomTruncate(LawX.Min() - Xinterval);
@@ -151,25 +172,9 @@ namespace Color_Analysis
 
                 #region Added at 2021.02.20 (1)
                 GraphArea.AxisX.MajorGrid.Interval = GraphArea.AxisX.Maximum - GraphArea.AxisX.Minimum;
+                GraphArea.AxisX.LabelAutoFitMaxFontSize = 7;
                 //set gbGraph's BackGround Color WHITE!!
                 #endregion
-
-                Series Lines = chtResult.Series.Add("Lines"); //새로운 series 생성
-                Lines.IsVisibleInLegend = false;
-                Lines.ChartType = SeriesChartType.Line;
-                Lines.BorderWidth = 2;
-
-                for (int i = 0; i < LawX.Count; i++)
-                {
-                    Lines.Points.AddXY(LawX[i], LawY[i]);
-                    if (i == LawX.Count - 1) Lines.Points.AddXY(LawX[0], LawY[0]);
-                }
-
-                Series pPoint = chtResult.Series.Add("Point");
-                pPoint.ChartType = SeriesChartType.Point;
-                pPoint.IsVisibleInLegend = false;
-                pPoint.Color = Color.Red;
-                pPoint.Points.AddXY((double)PointResult.X, (double)PointResult.Y);
             }
         }
     }

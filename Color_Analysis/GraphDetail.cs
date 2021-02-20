@@ -31,7 +31,7 @@ namespace Color_Analysis
             set { _LawY = value; }
         }
 
-        private PointF _PointResult = new PointF(0.57f, 0.42f);// 0.57f, 0.42f // 0.64f, 0.55f
+        private PointF _PointResult = new PointF(0.6554f, 0.765f);// 0.57f, 0.42f // 0.64f, 0.55f
         public PointF PointResult
         {
             get { return _PointResult; }
@@ -43,7 +43,7 @@ namespace Color_Analysis
             this.chtResult = Cht;
         }
 
-        private double CustomCeil(double input)
+        private double CustomTruncate(double input)
         {
             if (input > 1.0)
             {
@@ -58,7 +58,7 @@ namespace Color_Analysis
                 d *= 10;
             }
 
-            double result = Math.Ceiling(input * Math.Pow(10, cnt)) / Math.Pow(10, cnt);
+            double result = Math.Ceiling(input * Math.Pow(10, cnt+1)) / Math.Pow(10, cnt+1);
             return result;
         }
 
@@ -113,26 +113,46 @@ namespace Color_Analysis
                 chtResult.Series.Clear();
                 chtResult.ChartAreas.Clear();
 
-                double Xinterval = CustomCeil(LawX.Max() - LawX.Min());
-                double Yinterval = CustomCeil(LawY.Max() - LawY.Min());
+                double Xinterval = CustomTruncate(LawX.Max() - LawX.Min());
+                double Yinterval = CustomTruncate(LawY.Max() - LawY.Min());
+                Xinterval = 0.01; Yinterval = 0.01;
 
                 ChartArea GraphArea = chtResult.ChartAreas.Add("Result");
+
                 GraphArea.AxisX.Interval = Xinterval;
-                GraphArea.AxisX.Minimum = (LawX.Min() - Xinterval);
-                GraphArea.AxisX.Maximum = (LawX.Max() + Xinterval);
+                GraphArea.AxisX.Minimum = CustomTruncate(LawX.Min() - Xinterval);
+                GraphArea.AxisX.Maximum = CustomTruncate(LawX.Max() + Xinterval);
 
                 GraphArea.AxisY.Interval = Yinterval;
-                GraphArea.AxisY.Minimum = (LawY.Min() - Yinterval);
-                GraphArea.AxisY.Maximum = (LawY.Max() + Yinterval);
+                GraphArea.AxisY.Minimum = CustomTruncate(LawY.Min() - Yinterval);
+                GraphArea.AxisY.Maximum = CustomTruncate(LawY.Max() + Yinterval);
 
                 if (PointResult.X < GraphArea.AxisX.Minimum)
+                {
                     GraphArea.AxisX.Minimum = ((double)(new decimal(PointResult.X))) - Xinterval;
+                    GraphArea.AxisX.Minimum = CustomTruncate(GraphArea.AxisX.Minimum);
+                }
                 if (PointResult.X > GraphArea.AxisX.Maximum)
+                {
                     GraphArea.AxisX.Maximum = ((double)(new decimal(PointResult.X))) + Xinterval;
+                    GraphArea.AxisX.Maximum = CustomTruncate(GraphArea.AxisX.Maximum);
+                }
                 if (PointResult.Y < GraphArea.AxisY.Minimum)
+                {
                     GraphArea.AxisY.Minimum = ((double)(new decimal(PointResult.Y))) - Yinterval;
+                    GraphArea.AxisY.Minimum = CustomTruncate(GraphArea.AxisY.Minimum);
+
+                }
                 if (PointResult.Y > GraphArea.AxisY.Maximum)
+                {
                     GraphArea.AxisY.Maximum = ((double)(new decimal(PointResult.Y))) + Yinterval;
+                    GraphArea.AxisY.Maximum = CustomTruncate(GraphArea.AxisY.Maximum);
+                }
+
+                #region Added at 2021.02.20 (1)
+                GraphArea.AxisX.MajorGrid.Interval = GraphArea.AxisX.Maximum - GraphArea.AxisX.Minimum;
+                //set gbGraph's BackGround Color WHITE!!
+                #endregion
 
                 Series Lines = chtResult.Series.Add("Lines"); //새로운 series 생성
                 Lines.IsVisibleInLegend = false;

@@ -33,7 +33,7 @@ namespace Color_Analysis
             set { _LawY = LawY; }
         }
 
-        private PointF _PointResult = new PointF(0.57f, 0.42f);// 0.57f, 0.42f // 0.64f, 0.55f
+        private PointF _PointResult = new PointF(0.5664f, 0.4293f);// 0.57f, 0.42f // 0.64f, 0.55f
         public PointF PointResult
         {
             get { return _PointResult; }
@@ -195,8 +195,6 @@ namespace Color_Analysis
                 graphDetail.chtResult.Series["Lines"].Color = Color.Black;
                 graphDetail.chtResult.Series["Point"].Color = Color.Black;
                 graphDetail.chtResult.Show();
-
-                MessageBox.Show(graphDetail.chtResult.Series.Count.ToString());
             }
         }
 

@@ -567,7 +567,7 @@ namespace Color_Analysis
             this.btnCalc.TabIndex = 3;
             this.btnCalc.Text = "Calculate";
             this.btnCalc.UseVisualStyleBackColor = true;
-            this.btnCalc.Click += new System.EventHandler(this.btnUpdate_Click) + new System.EventHandler(this.btnCalc_Click);
+            this.btnCalc.Click += new System.EventHandler(this.btnCalc_Click);
             // 
             // TrsResult
             // 
@@ -644,7 +644,7 @@ namespace Color_Analysis
             this.chtResult.Legends.Add(legend1);
             this.chtResult.Location = new System.Drawing.Point(6, 23);
             this.chtResult.Name = "chtResult";
-            this.chtResult.Size = new System.Drawing.Size(463, 378);
+            this.chtResult.Size = new System.Drawing.Size(463, 345);
             this.chtResult.TabIndex = 23;
             this.chtResult.Text = "chart1";
             title1.Name = "Result";
@@ -652,6 +652,7 @@ namespace Color_Analysis
             // 
             // gbGraph
             // 
+            this.gbGraph.BackColor = System.Drawing.Color.White;
             this.gbGraph.Controls.Add(this.chtResult);
             this.gbGraph.Location = new System.Drawing.Point(525, 13);
             this.gbGraph.Name = "gbGraph";

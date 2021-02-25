@@ -105,15 +105,17 @@ namespace Color_Analysis
                     chtSpect.Show();
                 }
             }
-            this.LightSpect = null;
-            this.LightName = null;
-            this.LensSpect1 = null;
-            this.Lens1Name = null;
-            this.LensSpect2 = null;
-            this.Lens2Name = null;
-            this.LensSpect3 = null;
-            this.Lens3Name = null;
-            this.ResultSpect = null;
+            //this.LightSpect = null;
+            //this.LensSpect1 = null;
+            //this.LensSpect2 = null;
+            //this.LensSpect3 = null;
+            //this.ResultSpect = null;
+
+            //this.LightName = null;
+            //this.Lens1Name = null;
+            //this.Lens2Name = null;
+            //this.Lens3Name = null;
+
         }
     }
 }

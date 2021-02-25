@@ -29,15 +29,15 @@ namespace Color_Analysis
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.gbLightSource = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbLaw = new System.Windows.Forms.ComboBox();
-            this.cbLightProd = new System.Windows.Forms.ComboBox();
+            this.cbLight = new System.Windows.Forms.ComboBox();
             this.cbLightCol = new System.Windows.Forms.ComboBox();
             this.gbLens1 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -46,7 +46,7 @@ namespace Color_Analysis
             this.label4 = new System.Windows.Forms.Label();
             this.NumLens1T = new System.Windows.Forms.NumericUpDown();
             this.cbLens1T = new System.Windows.Forms.ComboBox();
-            this.cbLens1Prod = new System.Windows.Forms.ComboBox();
+            this.cbLens1 = new System.Windows.Forms.ComboBox();
             this.cbLens1Col = new System.Windows.Forms.ComboBox();
             this.gbLens2 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -56,7 +56,7 @@ namespace Color_Analysis
             this.NumLens2T = new System.Windows.Forms.NumericUpDown();
             this.cbLens2Col = new System.Windows.Forms.ComboBox();
             this.cbLens2T = new System.Windows.Forms.ComboBox();
-            this.cbLens2Prod = new System.Windows.Forms.ComboBox();
+            this.cbLens2 = new System.Windows.Forms.ComboBox();
             this.ckLens2 = new System.Windows.Forms.CheckBox();
             this.gbLens3 = new System.Windows.Forms.GroupBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -65,11 +65,10 @@ namespace Color_Analysis
             this.label12 = new System.Windows.Forms.Label();
             this.NumLens3T = new System.Windows.Forms.NumericUpDown();
             this.cbLens3Col = new System.Windows.Forms.ComboBox();
-            this.cbLens3Prod = new System.Windows.Forms.ComboBox();
+            this.cbLens3 = new System.Windows.Forms.ComboBox();
             this.cbLens3T = new System.Windows.Forms.ComboBox();
             this.ckLens3 = new System.Windows.Forms.CheckBox();
             this.gbResult = new System.Windows.Forms.GroupBox();
-            this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -83,6 +82,7 @@ namespace Color_Analysis
             this.tbUpdate = new System.Windows.Forms.TextBox();
             this.chtResult = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.gbGraph = new System.Windows.Forms.GroupBox();
+            this.btnSpect = new System.Windows.Forms.Button();
             this.gbLightSource.SuspendLayout();
             this.gbLens1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NumLens1T)).BeginInit();
@@ -101,7 +101,7 @@ namespace Color_Analysis
             this.gbLightSource.Controls.Add(this.label2);
             this.gbLightSource.Controls.Add(this.label1);
             this.gbLightSource.Controls.Add(this.cbLaw);
-            this.gbLightSource.Controls.Add(this.cbLightProd);
+            this.gbLightSource.Controls.Add(this.cbLight);
             this.gbLightSource.Controls.Add(this.cbLightCol);
             this.gbLightSource.Location = new System.Drawing.Point(12, 40);
             this.gbLightSource.Name = "gbLightSource";
@@ -124,9 +124,9 @@ namespace Color_Analysis
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(130, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 15);
+            this.label2.Size = new System.Drawing.Size(38, 15);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Product";
+            this.label2.Text = "Light";
             // 
             // label1
             // 
@@ -146,13 +146,14 @@ namespace Color_Analysis
             this.cbLaw.TabIndex = 2;
             this.cbLaw.SelectedIndexChanged += new System.EventHandler(this.cbLaw_Change);
             // 
-            // cbLightProd
+            // cbLight
             // 
-            this.cbLightProd.FormattingEnabled = true;
-            this.cbLightProd.Location = new System.Drawing.Point(133, 44);
-            this.cbLightProd.Name = "cbLightProd";
-            this.cbLightProd.Size = new System.Drawing.Size(215, 22);
-            this.cbLightProd.TabIndex = 1;
+            this.cbLight.FormattingEnabled = true;
+            this.cbLight.Location = new System.Drawing.Point(133, 44);
+            this.cbLight.Name = "cbLight";
+            this.cbLight.Size = new System.Drawing.Size(215, 22);
+            this.cbLight.TabIndex = 1;
+            this.cbLight.SelectedIndexChanged += new System.EventHandler(this.cbLight_Change);
             // 
             // cbLightCol
             // 
@@ -170,7 +171,7 @@ namespace Color_Analysis
             this.gbLens1.Controls.Add(this.label4);
             this.gbLens1.Controls.Add(this.NumLens1T);
             this.gbLens1.Controls.Add(this.cbLens1T);
-            this.gbLens1.Controls.Add(this.cbLens1Prod);
+            this.gbLens1.Controls.Add(this.cbLens1);
             this.gbLens1.Controls.Add(this.cbLens1Col);
             this.gbLens1.Location = new System.Drawing.Point(12, 118);
             this.gbLens1.Name = "gbLens1";
@@ -202,9 +203,9 @@ namespace Color_Analysis
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(152, 25);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 15);
+            this.label5.Size = new System.Drawing.Size(47, 15);
             this.label5.TabIndex = 7;
-            this.label5.Text = "Product";
+            this.label5.Text = "Lens1";
             // 
             // label4
             // 
@@ -253,13 +254,13 @@ namespace Color_Analysis
             this.cbLens1T.TabIndex = 2;
             this.cbLens1T.SelectedIndexChanged += new System.EventHandler(this.NumLens1T_Change);
             // 
-            // cbLens1Prod
+            // cbLens1
             // 
-            this.cbLens1Prod.FormattingEnabled = true;
-            this.cbLens1Prod.Location = new System.Drawing.Point(155, 44);
-            this.cbLens1Prod.Name = "cbLens1Prod";
-            this.cbLens1Prod.Size = new System.Drawing.Size(193, 22);
-            this.cbLens1Prod.TabIndex = 3;
+            this.cbLens1.FormattingEnabled = true;
+            this.cbLens1.Location = new System.Drawing.Point(155, 44);
+            this.cbLens1.Name = "cbLens1";
+            this.cbLens1.Size = new System.Drawing.Size(193, 22);
+            this.cbLens1.TabIndex = 3;
             // 
             // cbLens1Col
             // 
@@ -278,7 +279,7 @@ namespace Color_Analysis
             this.gbLens2.Controls.Add(this.NumLens2T);
             this.gbLens2.Controls.Add(this.cbLens2Col);
             this.gbLens2.Controls.Add(this.cbLens2T);
-            this.gbLens2.Controls.Add(this.cbLens2Prod);
+            this.gbLens2.Controls.Add(this.cbLens2);
             this.gbLens2.Enabled = false;
             this.gbLens2.Location = new System.Drawing.Point(33, 196);
             this.gbLens2.Name = "gbLens2";
@@ -310,9 +311,9 @@ namespace Color_Analysis
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(131, 26);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(58, 15);
+            this.label9.Size = new System.Drawing.Size(47, 15);
             this.label9.TabIndex = 11;
-            this.label9.Text = "Product";
+            this.label9.Text = "Lens2";
             // 
             // label8
             // 
@@ -369,13 +370,13 @@ namespace Color_Analysis
             this.cbLens2T.TabIndex = 2;
             this.cbLens2T.SelectedIndexChanged += new System.EventHandler(this.NumLens2T_Change);
             // 
-            // cbLens2Prod
+            // cbLens2
             // 
-            this.cbLens2Prod.FormattingEnabled = true;
-            this.cbLens2Prod.Location = new System.Drawing.Point(134, 44);
-            this.cbLens2Prod.Name = "cbLens2Prod";
-            this.cbLens2Prod.Size = new System.Drawing.Size(193, 22);
-            this.cbLens2Prod.TabIndex = 3;
+            this.cbLens2.FormattingEnabled = true;
+            this.cbLens2.Location = new System.Drawing.Point(134, 44);
+            this.cbLens2.Name = "cbLens2";
+            this.cbLens2.Size = new System.Drawing.Size(193, 22);
+            this.cbLens2.TabIndex = 3;
             // 
             // ckLens2
             // 
@@ -395,7 +396,7 @@ namespace Color_Analysis
             this.gbLens3.Controls.Add(this.label12);
             this.gbLens3.Controls.Add(this.NumLens3T);
             this.gbLens3.Controls.Add(this.cbLens3Col);
-            this.gbLens3.Controls.Add(this.cbLens3Prod);
+            this.gbLens3.Controls.Add(this.cbLens3);
             this.gbLens3.Controls.Add(this.cbLens3T);
             this.gbLens3.Enabled = false;
             this.gbLens3.Location = new System.Drawing.Point(33, 274);
@@ -428,9 +429,9 @@ namespace Color_Analysis
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(131, 24);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(58, 15);
+            this.label13.Size = new System.Drawing.Size(47, 15);
             this.label13.TabIndex = 15;
-            this.label13.Text = "Product";
+            this.label13.Text = "Lens3";
             // 
             // label12
             // 
@@ -478,13 +479,13 @@ namespace Color_Analysis
             this.cbLens3Col.Size = new System.Drawing.Size(122, 22);
             this.cbLens3Col.TabIndex = 3;
             // 
-            // cbLens3Prod
+            // cbLens3
             // 
-            this.cbLens3Prod.FormattingEnabled = true;
-            this.cbLens3Prod.Location = new System.Drawing.Point(134, 44);
-            this.cbLens3Prod.Name = "cbLens3Prod";
-            this.cbLens3Prod.Size = new System.Drawing.Size(193, 22);
-            this.cbLens3Prod.TabIndex = 3;
+            this.cbLens3.FormattingEnabled = true;
+            this.cbLens3.Location = new System.Drawing.Point(134, 44);
+            this.cbLens3.Name = "cbLens3";
+            this.cbLens3.Size = new System.Drawing.Size(193, 22);
+            this.cbLens3.TabIndex = 3;
             // 
             // cbLens3T
             // 
@@ -507,10 +508,10 @@ namespace Color_Analysis
             // 
             // gbResult
             // 
-            this.gbResult.Controls.Add(this.label19);
             this.gbResult.Controls.Add(this.label18);
             this.gbResult.Controls.Add(this.label17);
             this.gbResult.Controls.Add(this.label16);
+            this.gbResult.Controls.Add(this.btnSpect);
             this.gbResult.Controls.Add(this.btnCalc);
             this.gbResult.Controls.Add(this.TrsResult);
             this.gbResult.Controls.Add(this.CyResult);
@@ -522,28 +523,19 @@ namespace Color_Analysis
             this.gbResult.TabStop = false;
             this.gbResult.Text = "Result";
             // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(385, 25);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(33, 15);
-            this.label19.TabIndex = 21;
-            this.label19.Text = "Run";
-            // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(256, 25);
+            this.label18.Location = new System.Drawing.Point(185, 25);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(99, 15);
+            this.label18.Size = new System.Drawing.Size(48, 15);
             this.label18.TabIndex = 20;
-            this.label18.Text = "Transmissivity";
+            this.label18.Text = "Trans.";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(130, 25);
+            this.label17.Location = new System.Drawing.Point(96, 25);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(25, 15);
             this.label17.TabIndex = 19;
@@ -561,9 +553,9 @@ namespace Color_Analysis
             // btnCalc
             // 
             this.btnCalc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalc.Location = new System.Drawing.Point(386, 43);
+            this.btnCalc.Location = new System.Drawing.Point(404, 23);
             this.btnCalc.Name = "btnCalc";
-            this.btnCalc.Size = new System.Drawing.Size(105, 23);
+            this.btnCalc.Size = new System.Drawing.Size(87, 43);
             this.btnCalc.TabIndex = 3;
             this.btnCalc.Text = "Calculate";
             this.btnCalc.UseVisualStyleBackColor = true;
@@ -572,7 +564,7 @@ namespace Color_Analysis
             // TrsResult
             // 
             this.TrsResult.BackColor = System.Drawing.Color.Cornsilk;
-            this.TrsResult.Location = new System.Drawing.Point(259, 43);
+            this.TrsResult.Location = new System.Drawing.Point(185, 43);
             this.TrsResult.Name = "TrsResult";
             this.TrsResult.ReadOnly = true;
             this.TrsResult.Size = new System.Drawing.Size(120, 24);
@@ -581,10 +573,10 @@ namespace Color_Analysis
             // CyResult
             // 
             this.CyResult.BackColor = System.Drawing.Color.Cornsilk;
-            this.CyResult.Location = new System.Drawing.Point(133, 43);
+            this.CyResult.Location = new System.Drawing.Point(96, 43);
             this.CyResult.Name = "CyResult";
             this.CyResult.ReadOnly = true;
-            this.CyResult.Size = new System.Drawing.Size(120, 24);
+            this.CyResult.Size = new System.Drawing.Size(83, 24);
             this.CyResult.TabIndex = 1;
             // 
             // CxResult
@@ -593,7 +585,7 @@ namespace Color_Analysis
             this.CxResult.Location = new System.Drawing.Point(7, 43);
             this.CxResult.Name = "CxResult";
             this.CxResult.ReadOnly = true;
-            this.CxResult.Size = new System.Drawing.Size(120, 24);
+            this.CxResult.Size = new System.Drawing.Size(83, 24);
             this.CxResult.TabIndex = 0;
             // 
             // btnSet
@@ -638,17 +630,17 @@ namespace Color_Analysis
             // 
             // chtResult
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chtResult.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chtResult.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chtResult.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chtResult.Legends.Add(legend2);
             this.chtResult.Location = new System.Drawing.Point(6, 23);
             this.chtResult.Name = "chtResult";
             this.chtResult.Size = new System.Drawing.Size(463, 345);
             this.chtResult.TabIndex = 23;
             this.chtResult.Text = "chart1";
-            title1.Name = "Result";
-            this.chtResult.Titles.Add(title1);
+            title2.Name = "Result";
+            this.chtResult.Titles.Add(title2);
             // 
             // gbGraph
             // 
@@ -660,6 +652,17 @@ namespace Color_Analysis
             this.gbGraph.TabIndex = 23;
             this.gbGraph.TabStop = false;
             this.gbGraph.Text = "Graph";
+            // 
+            // btnSpect
+            // 
+            this.btnSpect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSpect.Location = new System.Drawing.Point(311, 23);
+            this.btnSpect.Name = "btnSpect";
+            this.btnSpect.Size = new System.Drawing.Size(87, 43);
+            this.btnSpect.TabIndex = 3;
+            this.btnSpect.Text = "Spectrum";
+            this.btnSpect.UseVisualStyleBackColor = true;
+            this.btnSpect.Click += new System.EventHandler(this.btnSpect_Click);
             // 
             // mainForm
             // 
@@ -709,18 +712,18 @@ namespace Color_Analysis
         private System.Windows.Forms.GroupBox gbLens3;
         private System.Windows.Forms.GroupBox gbResult;
         private System.Windows.Forms.ComboBox cbLaw;
-        private System.Windows.Forms.ComboBox cbLightProd;
+        private System.Windows.Forms.ComboBox cbLight;
         private System.Windows.Forms.ComboBox cbLightCol;
-        private System.Windows.Forms.ComboBox cbLens1Prod;
+        private System.Windows.Forms.ComboBox cbLens1;
         private System.Windows.Forms.ComboBox cbLens1Col;
         private System.Windows.Forms.NumericUpDown NumLens1T;
         private System.Windows.Forms.ComboBox cbLens1T;
         private System.Windows.Forms.ComboBox cbLens2Col;
         private System.Windows.Forms.ComboBox cbLens2T;
-        private System.Windows.Forms.ComboBox cbLens2Prod;
+        private System.Windows.Forms.ComboBox cbLens2;
         private System.Windows.Forms.NumericUpDown NumLens2T;
         private System.Windows.Forms.ComboBox cbLens3Col;
-        private System.Windows.Forms.ComboBox cbLens3Prod;
+        private System.Windows.Forms.ComboBox cbLens3;
         private System.Windows.Forms.NumericUpDown NumLens3T;
         private System.Windows.Forms.ComboBox cbLens3T;
         private System.Windows.Forms.Button btnCalc;
@@ -742,7 +745,6 @@ namespace Color_Analysis
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
@@ -754,6 +756,7 @@ namespace Color_Analysis
         private System.Windows.Forms.CheckBox ckLens3;
         private System.Windows.Forms.DataVisualization.Charting.Chart chtResult;
         private System.Windows.Forms.GroupBox gbGraph;
+        private System.Windows.Forms.Button btnSpect;
     }
 }
 

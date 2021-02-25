@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,6 +41,14 @@ namespace Color_Analysis
             set { _graphDetail = value; }
         }
 
+
+        private Spectrums _spectrums = new Spectrums();
+        public  Spectrums specturms
+        {
+            get { return _spectrums; } 
+            set { _spectrums = value; } 
+        }
+
         public const string colorPath = @"D:\이대현\WORK_SPACE\Project_C#\Color_Analysis\Color_Analysis\client_data\Color";
         public const string lawPath = @"D:\이대현\WORK_SPACE\Project_C#\Color_Analysis\Color_Analysis\client_data\Law";
         public const string lensPath = @"D:\이대현\WORK_SPACE\Project_C#\Color_Analysis\Color_Analysis\client_data\Lens";
@@ -51,17 +60,17 @@ namespace Color_Analysis
             InitializeComponent();
 
             initComboBox(cbLightCol, colorPath);
-            initComboBox(cbLightProd, lightPath);
+            initComboBox(cbLight, lightPath);
             initComboBox(cbLaw, lawPath);
 
             initComboBox(cbLens1Col, colorPath);
-            initComboBox(cbLens1Prod, lensPath);
+            initComboBox(cbLens1, lensPath);
 
             initComboBox(cbLens2Col, colorPath);
-            initComboBox(cbLens2Prod, lensPath);
+            initComboBox(cbLens2, lensPath);
 
             initComboBox(cbLens3Col, colorPath);
-            initComboBox(cbLens3Prod, lensPath);
+            initComboBox(cbLens3, lensPath);
 
             cbLens1T.Items.AddRange(new string[] {"1T", "2T", "3T", "4T", "Input"});
             cbLens2T.Items.AddRange(new string[] {"1T", "2T", "3T", "4T", "Input"});
@@ -151,6 +160,28 @@ namespace Color_Analysis
             else gbLens3.Enabled = false;
         }
 
+        private void cbLight_Change(object sender, EventArgs e)
+        {
+            try
+            {
+                using (StreamReader Sr = new StreamReader(lightPath + "\\" + cbLight.SelectedItem + ".txt"))
+                {
+                    specturms.LightName = cbLight.SelectedItem.ToString();
+                    specturms.LightSpect = new List<double>();
+
+                    string line;
+                    while ((line = Sr.ReadLine()) != null)
+                    {
+                        specturms.LightSpect.Add(Convert.ToDouble(line));
+                    }
+                }
+            }
+            catch (FileNotFoundException)
+            {
+            }
+
+        }
+
         private void cbLaw_Change(object sender, EventArgs e)
         {
             LawX.Clear();
@@ -216,6 +247,22 @@ namespace Color_Analysis
             {
 
             }
+        }
+
+        private void btnSpect_Click(object sender, EventArgs e)
+        {
+            if (specturms.LightSpect != null || specturms.LensSpect1 != null || specturms.LensSpect2 != null || specturms.LensSpect3 != null || specturms.ResultSpect != null)
+            {
+                if (specturms != null)
+                {
+                    specturms.Draw();
+                }
+                if (specturms.ShowDialog() == DialogResult.OK)
+                {
+                    return;
+                }
+            }
+
         }
     }
 }

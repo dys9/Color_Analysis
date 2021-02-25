@@ -63,6 +63,12 @@
     <Compile Include="setForm.Designer.cs">
       <DependentUpon>setForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Spectrums.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Spectrums.Designer.cs">
+      <DependentUpon>Spectrums.cs</DependentUpon>
+    </Compile>
     <Compile Include="Update.cs" />
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
@@ -78,6 +84,9 @@
     </Compile>
     <EmbeddedResource Include="setForm.resx">
       <DependentUpon>setForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Spectrums.resx">
+      <DependentUpon>Spectrums.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

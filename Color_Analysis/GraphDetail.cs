@@ -31,7 +31,7 @@ namespace Color_Analysis
             set { _LawY = value; }
         }
 
-        private PointF _PointResult = new PointF(0.74f, 0.7293f);// 0.57f, 0.42f // 0.64f, 0.55f
+        private PointF _PointResult = new PointF(0.5734f, 0.427293f);// 0.57f, 0.42f // 0.64f, 0.55f
         public PointF PointResult
         {
             get { return _PointResult; }
@@ -140,7 +140,7 @@ namespace Color_Analysis
                 double Yinterval = CustomTruncate(LawY.Max() - LawY.Min());
                 Xinterval = 0.01; Yinterval = 0.01;
 
-                GraphArea.AxisX.Interval = Xinterval;
+                GraphArea.AxisX.Interval = Xinterval; // 수정 하자
                 GraphArea.AxisX.Minimum = CustomTruncate(LawX.Min() - Xinterval);
                 GraphArea.AxisX.Maximum = CustomTruncate(LawX.Max() + Xinterval);
 

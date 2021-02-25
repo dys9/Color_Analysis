@@ -9,3 +9,4 @@ D:\이대현\WORK_SPACE\Project_C#\Color_Analysis\Color_Analysis\obj\Debug\Color
 D:\이대현\WORK_SPACE\Project_C#\Color_Analysis\Color_Analysis\obj\Debug\Color_Analysis.pdb
 D:\이대현\WORK_SPACE\Project_C#\Color_Analysis\Color_Analysis\obj\Debug\Color_Analysis.setForm.resources
 D:\이대현\WORK_SPACE\Project_C#\Color_Analysis\Color_Analysis\obj\Debug\Color_Analysis.mainForm.resources
+D:\이대현\WORK_SPACE\Project_C#\Color_Analysis\Color_Analysis\obj\Debug\Color_Analysis.Spectrums.resources

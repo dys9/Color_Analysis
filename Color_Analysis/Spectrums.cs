@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -75,9 +76,15 @@ namespace Color_Analysis
             get { return _Lens3Name; }
             set { _Lens1Name = value; }
         }
+
         public Spectrums()
         {
             InitializeComponent();
+            ResultSpect = new List<double>();
+            for (int i = 0; i < 401; i++)
+            {
+                ResultSpect.Add(110.00066 * i);
+            }
         }
 
         public void Draw()
@@ -90,9 +97,22 @@ namespace Color_Analysis
                 ChartArea GraphArea = chtSpect.ChartAreas.Add("Result");
                 GraphArea.AxisX.Minimum = 380;
                 GraphArea.AxisX.Maximum = 780;
+                GraphArea.AxisY.Maximum = ResultSpect.Max();
+                GraphArea.AxisY.Maximum = 1;
 
                 if (LightSpect != null)
                 {
+                    Series Temp = chtSpect.Series.Add("Temp");
+                    Temp.ChartType = SeriesChartType.Spline;
+                    Temp.BorderWidth = 3;
+                    Temp.LegendText = "Result";
+
+                    for (int i = 0; i < LightSpect.Count; i++)
+                    {
+                        Temp.Points.AddXY(i + 380, ResultSpect[i] / ResultSpect.Max());
+                    }
+                    chtSpect.Show();
+
                     Series LightLine = chtSpect.Series.Add("LightLine");
                     LightLine.ChartType = SeriesChartType.Spline;
                     LightLine.BorderWidth = 3;
@@ -100,7 +120,7 @@ namespace Color_Analysis
 
                     for (int i = 0; i < LightSpect.Count; i++)
                     {
-                        LightLine.Points.AddXY(i + 380, LightSpect[0]);
+                        LightLine.Points.AddXY(i + 380, Math.Abs(Math.Sin(0.04*i)));
                     }
                     chtSpect.Show();
                 }
@@ -116,6 +136,16 @@ namespace Color_Analysis
             //this.Lens2Name = null;
             //this.Lens3Name = null;
 
+        }
+        private void btnCap_Click(object sender, EventArgs e)
+        {
+            // 클립보드에 text 저장하기
+            using (MemoryStream ms = new MemoryStream())
+            {
+                chtSpect.SaveImage(ms, ChartImageFormat.Bmp);
+                Bitmap bm = new Bitmap(ms);
+                Clipboard.SetImage(bm);
+            }
         }
     }
 }
